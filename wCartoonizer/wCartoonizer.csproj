@@ -1,0 +1,729 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C874B88-4F2F-4326-BFF1-C5256BCCFFC9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PrimaCartoonizer</RootNamespace>
+    <AssemblyName>PrimaCartoonizer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cartoonizer.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PrimaCartoonizer.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Licensing.Net, Version=3.0.0.0, Culture=neutral, PublicKeyToken=6b789b4f1459fe6f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Licensing.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="LicensingUI.Net, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6b789b4f1459fe6f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\LicensingUI.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AFrogeHelper.cs" />
+    <Compile Include="Auth.cs" />
+    <Compile Include="CConvert.cs" />
+    <Compile Include="CartoonizeHelper.cs" />
+    <Compile Include="Control\Block.xaml.cs">
+      <DependentUpon>Block.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\LoadingAnimation.xaml.cs">
+      <DependentUpon>LoadingAnimation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FacebookLogin.xaml.cs">
+      <DependentUpon>FacebookLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MemoryManage.cs" />
+    <Compile Include="RegisterControl.xaml.cs">
+      <DependentUpon>RegisterControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VisualTreeHelperExtensions.cs" />
+    <Compile Include="IPopupControl.cs" />
+    <Compile Include="View\MainControl.xaml.cs">
+      <DependentUpon>MainControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Block.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\LoadingAnimation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FacebookLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="RegisterControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ScrollViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\SliderResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Toolbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MainControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Resources\Popart\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cartoonizer.ToolsLib\Cartoonizer.ToolsLib.csproj">
+      <Project>{04456DDE-AF72-4B83-9132-5AFC5F89CC76}</Project>
+      <Name>Cartoonizer.ToolsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{bfaf50dc-4942-46b8-8615-2a0b4cf08ad2}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Imaging\Imaging.csproj">
+      <Project>{af802e16-573e-4748-ae76-e2a4fdc74179}</Project>
+      <Name>Imaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Silverwiz.Expander\Silverwiz.Expander.csproj">
+      <Project>{1D6B8E22-0510-4D86-B038-8925173F2F65}</Project>
+      <Name>Silverwiz.Expander</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converters\" />
+    <Folder Include="CostomControls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\questionmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\common_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\undo.png" />
+    <Resource Include="Images\crop.png" />
+    <Resource Include="Images\cursor.png" />
+    <Resource Include="Images\sidebar_button_big_indicator-contracted.png" />
+    <Resource Include="Resources\effects\effet2.jpg" />
+    <Resource Include="Resources\effects\effet3.jpg" />
+    <Resource Include="Resources\effects\effet4.jpg" />
+    <Resource Include="Resources\effects\effet5.jpg" />
+    <Resource Include="Resources\effects\effet6.jpg" />
+    <Resource Include="Resources\effects\effet7.jpg" />
+    <Resource Include="Resources\effects\effet8.jpg" />
+    <Resource Include="Resources\effects\effet9.jpg" />
+    <Resource Include="cartoonizer.ico" />
+    <Resource Include="Images\Zoom-In-icon.png" />
+    <Resource Include="Images\Zoom Out.png" />
+    <Resource Include="Images\print.png" />
+    <Resource Include="Images\share.png" />
+    <Resource Include="Images\fb.png" />
+    <Resource Include="Images\caddie.png" />
+    <Resource Include="Images\reload.png" />
+    <Resource Include="Images\apply.png" />
+    <Resource Include="Resources\effects\17.png" />
+    <Resource Include="Images\add.png" />
+    <Resource Include="favicon.ico" />
+    <Resource Include="icon.ico" />
+    <Resource Include="Resources\effects\effet1.jpg" />
+    <Resource Include="Resources\effects\effet11.jpg" />
+    <Resource Include="Resources\effects\effet12.jpg" />
+    <Resource Include="Resources\effects\effet10.jpg" />
+    <Resource Include="Resources\effects\effet0.jpg" />
+    <Resource Include="Resources\effects\effet101.jpg" />
+    <Resource Include="Resources\effects\effet102.jpg" />
+    <Resource Include="Resources\effects\effet103.jpg" />
+    <Resource Include="Resources\effects\effet104.jpg" />
+    <Resource Include="Resources\effects\effet201.jpg" />
+    <Resource Include="Resources\effects\effet202.jpg" />
+    <Resource Include="Resources\effects\effet203.jpg" />
+    <Resource Include="Resources\effects\effet204.jpg" />
+    <Resource Include="Resources\effects\effet205.jpg" />
+    <Resource Include="Resources\effects\effet206.jpg" />
+    <Resource Include="Resources\effects\effet207.jpg" />
+    <Resource Include="Resources\effects\effet208.jpg" />
+    <Resource Include="Resources\effects\effet209.jpg" />
+    <Resource Include="Resources\effects\effet300.png" />
+    <Resource Include="Resources\effects\effet301.png" />
+    <Resource Include="Resources\effects\effet302.png" />
+    <Resource Include="Resources\effects\effet303.png" />
+    <Resource Include="Images\logotop.png" />
+    <Resource Include="Resources\Glasses\01.png" />
+    <Resource Include="Resources\Glasses\02.png" />
+    <Resource Include="Resources\Glasses\03.png" />
+    <Resource Include="Resources\Glasses\04.png" />
+    <Resource Include="Resources\Glasses\05.png" />
+    <Resource Include="Resources\Glasses\06.png" />
+    <Resource Include="Resources\Glasses\07.png" />
+    <Resource Include="Resources\Glasses\08.png" />
+    <Resource Include="Resources\Glasses\09.png" />
+    <Resource Include="Resources\Glasses\10.png" />
+    <Resource Include="Resources\Glasses\11.png" />
+    <Resource Include="Resources\Glasses\12.png" />
+    <Resource Include="Resources\Glasses\13.png" />
+    <Resource Include="Resources\Glasses\14.png" />
+    <Resource Include="Resources\Glasses\15.png" />
+    <Resource Include="Resources\Glasses\16.png" />
+    <Resource Include="Resources\Glasses\17.png" />
+    <Resource Include="Resources\Glasses\18.png" />
+    <Resource Include="Resources\Glasses\19.png" />
+    <Resource Include="Resources\Glasses\20.png" />
+    <Resource Include="Resources\Glasses\21.png" />
+    <Resource Include="Resources\Glasses\22.png" />
+    <Resource Include="Resources\Glasses\23.png" />
+    <Resource Include="Resources\Glasses\24.png" />
+    <Resource Include="Resources\Glasses\25.png" />
+    <Resource Include="Resources\Glasses\26.png" />
+    <Resource Include="Resources\Glasses\27.png" />
+    <Resource Include="Resources\Glasses\28.png" />
+    <Resource Include="Resources\Glasses\29.png" />
+    <Resource Include="Resources\Glasses\30.png" />
+    <Resource Include="Resources\Glasses\31.png" />
+    <Resource Include="Resources\Glasses\32.png" />
+    <Resource Include="Resources\Glasses\33.png" />
+    <Resource Include="Resources\Glasses\34.png" />
+    <Resource Include="Resources\EyesMan\01.png" />
+    <Resource Include="Resources\EyesMan\02.png" />
+    <Resource Include="Resources\EyesMan\03.png" />
+    <Resource Include="Resources\EyesMan\04.png" />
+    <Resource Include="Resources\EyesMan\05.png" />
+    <Resource Include="Resources\EyesMan\06.png" />
+    <Resource Include="Resources\EyesMan\07.png" />
+    <Resource Include="Resources\EyesMan\08.png" />
+    <Resource Include="Resources\EyesMan\09.png" />
+    <Resource Include="Resources\EyesMan\10.png" />
+    <Resource Include="Resources\EyesMan\11.png" />
+    <Resource Include="Resources\EyesMan\12.png" />
+    <Resource Include="Resources\EyesMan\13.png" />
+    <Resource Include="Resources\EyesMan\14.png" />
+    <Resource Include="Resources\EyesMan\15.png" />
+    <Resource Include="Resources\EyesMan\16.png" />
+    <Resource Include="Resources\EyesMan\17.png" />
+    <Resource Include="Resources\EyesMan\18.png" />
+    <Resource Include="Resources\EyesMan\19.png" />
+    <Resource Include="Resources\EyesMan\20.png" />
+    <Resource Include="Resources\EyesMan\21.png" />
+    <Resource Include="Resources\EyesMan\22.png" />
+    <Resource Include="Resources\EyesMan\23.png" />
+    <Resource Include="Resources\EyesMan\24.png" />
+    <Resource Include="Resources\EyesMan\25.png" />
+    <Resource Include="Resources\EyesMan\26.png" />
+    <Resource Include="Resources\EyesMan\27.png" />
+    <Resource Include="Resources\EyesMan\28.png" />
+    <Resource Include="Resources\EyesMan\29.png" />
+    <Resource Include="Resources\EyesMan\30.png" />
+    <Resource Include="Resources\EyesMan\31.png" />
+    <Resource Include="Resources\EyesMan\32.png" />
+    <Resource Include="Resources\EyesMan\33.png" />
+    <Resource Include="Resources\EyesMan\34.png" />
+    <Resource Include="Resources\EyesToon\01.png" />
+    <Resource Include="Resources\EyesToon\02.png" />
+    <Resource Include="Resources\EyesToon\03.png" />
+    <Resource Include="Resources\EyesToon\04.png" />
+    <Resource Include="Resources\EyesToon\05.png" />
+    <Resource Include="Resources\EyesToon\06.png" />
+    <Resource Include="Resources\EyesToon\07.png" />
+    <Resource Include="Resources\EyesToon\08.png" />
+    <Resource Include="Resources\EyesToon\09.png" />
+    <Resource Include="Resources\EyesToon\10.png" />
+    <Resource Include="Resources\EyesToon\11.png" />
+    <Resource Include="Resources\EyesToon\12.png" />
+    <Resource Include="Resources\EyesToon\13.png" />
+    <Resource Include="Resources\EyesToon\14.png" />
+    <Resource Include="Resources\EyesToon\15.png" />
+    <Resource Include="Resources\EyesToon\16.png" />
+    <Resource Include="Resources\EyesToon\17.png" />
+    <Resource Include="Resources\EyesToon\18.png" />
+    <Resource Include="Resources\EyesToon\19.png" />
+    <Resource Include="Resources\EyesToon\20.png" />
+    <Resource Include="Resources\EyesToon\21.png" />
+    <Resource Include="Resources\EyesToon\22.png" />
+    <Resource Include="Resources\EyesToon\23.png" />
+    <Resource Include="Resources\EyesToon\24.png" />
+    <Resource Include="Resources\EyesToon\25.png" />
+    <Resource Include="Resources\EyesToon\26.png" />
+    <Resource Include="Resources\EyesToon\27.png" />
+    <Resource Include="Resources\EyesToon\28.png" />
+    <Resource Include="Resources\EyesToon\29.png" />
+    <Resource Include="Resources\EyesWomen\01.png" />
+    <Resource Include="Resources\EyesWomen\02.png" />
+    <Resource Include="Resources\EyesWomen\03.png" />
+    <Resource Include="Resources\EyesWomen\04.png" />
+    <Resource Include="Resources\EyesWomen\05.png" />
+    <Resource Include="Resources\EyesWomen\06.png" />
+    <Resource Include="Resources\EyesWomen\07.png" />
+    <Resource Include="Resources\EyesWomen\08.png" />
+    <Resource Include="Resources\EyesWomen\09.png" />
+    <Resource Include="Resources\EyesWomen\10.png" />
+    <Resource Include="Resources\EyesWomen\11.png" />
+    <Resource Include="Resources\EyesWomen\12.png" />
+    <Resource Include="Resources\EyesWomen\13.png" />
+    <Resource Include="Resources\EyesWomen\14.png" />
+    <Resource Include="Resources\EyesWomen\15.png" />
+    <Resource Include="Resources\EyesWomen\16.png" />
+    <Resource Include="Resources\EyesWomen\17.png" />
+    <Resource Include="Resources\EyesWomen\18.png" />
+    <Resource Include="Resources\EyesWomen\19.png" />
+    <Resource Include="Resources\EyesWomen\20.png" />
+    <Resource Include="Resources\EyesWomen\21.png" />
+    <Resource Include="Resources\EyesWomen\22.png" />
+    <Resource Include="Resources\EyesWomen\23.png" />
+    <Resource Include="Resources\EyesWomen\24.png" />
+    <Resource Include="Resources\EyesWomen\25.png" />
+    <Resource Include="Resources\EyesWomen\26.png" />
+    <Resource Include="Resources\EyesWomen\27.png" />
+    <Resource Include="Resources\EyesWomen\28.png" />
+    <Resource Include="Resources\EyesWomen\29.png" />
+    <Resource Include="Resources\EyesWomen\30.png" />
+    <Resource Include="Resources\EyesMan\35.png" />
+    <Resource Include="Resources\EyesMan\36.png" />
+    <Resource Include="Resources\EyesMan\37.png" />
+    <Resource Include="Resources\EyesMan\38.png" />
+    <Resource Include="Resources\EyesMan\39.png" />
+    <Resource Include="Resources\EyesMan\40.png" />
+    <Resource Include="Resources\EyesMan\41.png" />
+    <Resource Include="Resources\EyesMan\42.png" />
+    <Resource Include="Resources\EyesMan\43.png" />
+    <Resource Include="Resources\EyesMan\44.png" />
+    <Resource Include="Resources\EyesMan\45.png" />
+    <Resource Include="Resources\EyesMan\46.png" />
+    <Resource Include="Resources\EyesMan\47.png" />
+    <Resource Include="Resources\EyesMan\48.png" />
+    <Resource Include="Resources\EyesMan\49.png" />
+    <Resource Include="Resources\EyesMan\50.png" />
+    <Resource Include="Resources\EyesMan\51.png" />
+    <Resource Include="Resources\EyesMan\52.png" />
+    <Resource Include="Resources\EyesMan\53.png" />
+    <Resource Include="Resources\EyesMan\54.png" />
+    <Resource Include="Resources\EyesMan\55.png" />
+    <Resource Include="Resources\EyesMan\56.png" />
+    <Resource Include="Resources\EyesMan\57.png" />
+    <Resource Include="Resources\EyesMan\58.png" />
+    <Resource Include="Resources\EyesMan\59.png" />
+    <Resource Include="Resources\EyesMan\60.png" />
+    <Resource Include="Resources\EyesMan\61.png" />
+    <Resource Include="Resources\EyesMan\62.png" />
+    <Resource Include="Resources\EyesMan\63.png" />
+    <Resource Include="Resources\EyesMan\64.png" />
+    <Resource Include="Resources\EyesMan\65.png" />
+    <Resource Include="Resources\EyesMan\66.png" />
+    <Resource Include="Resources\EyesMan\67.png" />
+    <Resource Include="Resources\EyesMan\68.png" />
+    <Resource Include="Resources\EyesToon\30.png" />
+    <Resource Include="Resources\EyesToon\31.png" />
+    <Resource Include="Resources\EyesToon\32.png" />
+    <Resource Include="Resources\EyesToon\33.png" />
+    <Resource Include="Resources\EyesToon\34.png" />
+    <Resource Include="Resources\EyesToon\35.png" />
+    <Resource Include="Resources\EyesToon\36.png" />
+    <Resource Include="Resources\EyesToon\37.png" />
+    <Resource Include="Resources\EyesToon\38.png" />
+    <Resource Include="Resources\EyesToon\39.png" />
+    <Resource Include="Resources\EyesToon\40.png" />
+    <Resource Include="Resources\EyesToon\41.png" />
+    <Resource Include="Resources\EyesToon\42.png" />
+    <Resource Include="Resources\EyesToon\43.png" />
+    <Resource Include="Resources\EyesToon\44.png" />
+    <Resource Include="Resources\EyesToon\45.png" />
+    <Resource Include="Resources\EyesToon\46.png" />
+    <Resource Include="Resources\EyesToon\47.png" />
+    <Resource Include="Resources\EyesToon\48.png" />
+    <Resource Include="Resources\EyesToon\49.png" />
+    <Resource Include="Resources\EyesToon\50.png" />
+    <Resource Include="Resources\EyesToon\51.png" />
+    <Resource Include="Resources\EyesToon\52.png" />
+    <Resource Include="Resources\EyesToon\53.png" />
+    <Resource Include="Resources\EyesToon\54.png" />
+    <Resource Include="Resources\EyesToon\55.png" />
+    <Resource Include="Resources\EyesToon\56.png" />
+    <Resource Include="Resources\EyesToon\57.png" />
+    <Resource Include="Resources\EyesToon\58.png" />
+    <Resource Include="Resources\EyesWomen\31.png" />
+    <Resource Include="Resources\EyesWomen\32.png" />
+    <Resource Include="Resources\EyesWomen\33.png" />
+    <Resource Include="Resources\EyesWomen\34.png" />
+    <Resource Include="Resources\EyesWomen\35.png" />
+    <Resource Include="Resources\EyesWomen\36.png" />
+    <Resource Include="Resources\EyesWomen\37.png" />
+    <Resource Include="Resources\EyesWomen\38.png" />
+    <Resource Include="Resources\EyesWomen\39.png" />
+    <Resource Include="Resources\EyesWomen\40.png" />
+    <Resource Include="Resources\EyesWomen\41.png" />
+    <Resource Include="Resources\EyesWomen\42.png" />
+    <Resource Include="Resources\EyesWomen\43.png" />
+    <Resource Include="Resources\EyesWomen\44.png" />
+    <Resource Include="Resources\EyesWomen\45.png" />
+    <Resource Include="Resources\EyesWomen\46.png" />
+    <Resource Include="Resources\EyesWomen\47.png" />
+    <Resource Include="Resources\EyesWomen\48.png" />
+    <Resource Include="Resources\EyesWomen\49.png" />
+    <Resource Include="Resources\EyesWomen\50.png" />
+    <Resource Include="Resources\EyesWomen\51.png" />
+    <Resource Include="Resources\EyesWomen\52.png" />
+    <Resource Include="Resources\EyesWomen\53.png" />
+    <Resource Include="Resources\EyesWomen\54.png" />
+    <Resource Include="Resources\EyesWomen\55.png" />
+    <Resource Include="Resources\EyesWomen\56.png" />
+    <Resource Include="Resources\EyesWomen\57.png" />
+    <Resource Include="Resources\EyesWomen\58.png" />
+    <Resource Include="Resources\EyesWomen\59.png" />
+    <Resource Include="Resources\EyesWomen\60.png" />
+    <Resource Include="Resources\Eyes\01.png" />
+    <Resource Include="Resources\Eyes\02.png" />
+    <Resource Include="Resources\Eyes\03.png" />
+    <Resource Include="Resources\Eyes\04.png" />
+    <Resource Include="Resources\Eyes\05.png" />
+    <Resource Include="Resources\Eyes\06.png" />
+    <Resource Include="Resources\Eyes\07.png" />
+    <Resource Include="Resources\Eyes\08.png" />
+    <Resource Include="Resources\Eyes\09.png" />
+    <Resource Include="Resources\Eyes\10.png" />
+    <Resource Include="Resources\Eyes\11.png" />
+    <Resource Include="Resources\Eyes\12.png" />
+    <Resource Include="Resources\Eyes\13.png" />
+    <Resource Include="Resources\Eyes\14.png" />
+    <Resource Include="Resources\Eyes\15.png" />
+    <Resource Include="Resources\Eyes\16.png" />
+    <Resource Include="Resources\Eyes\17.png" />
+    <Resource Include="Resources\Eyes\18.png" />
+    <Resource Include="Resources\Eyes\19.png" />
+    <Resource Include="Resources\Eyes\20.png" />
+    <Resource Include="Resources\Eyes\21.png" />
+    <Resource Include="Resources\Eyes\22.png" />
+    <Resource Include="Resources\Eyes\23.png" />
+    <Resource Include="Resources\Eyes\24.png" />
+    <Resource Include="Resources\Eyes\25.png" />
+    <Resource Include="Resources\Eyes\26.png" />
+    <Resource Include="Resources\Eyes\27.png" />
+    <Resource Include="Resources\Eyes\28.png" />
+    <Resource Include="Resources\Eyes\29.png" />
+    <Resource Include="Resources\Eyes\30.png" />
+    <Resource Include="Resources\Eyes\31.png" />
+    <Resource Include="Resources\Eyes\32.png" />
+    <Resource Include="Resources\Eyes\33.png" />
+    <Resource Include="Resources\Eyes\34.png" />
+    <Resource Include="Resources\Eyes\35.png" />
+    <Resource Include="Resources\Eyes\36.png" />
+    <Resource Include="Resources\Eyes\37.png" />
+    <Resource Include="Resources\Eyes\38.png" />
+    <Resource Include="Resources\Eyes\39.png" />
+    <Resource Include="Resources\Eyes\40.png" />
+    <Resource Include="Resources\Eyes\41.png" />
+    <Resource Include="Resources\Eyes\42.png" />
+    <Resource Include="Resources\Eyes\43.png" />
+    <Resource Include="Resources\Eyes\44.png" />
+    <Resource Include="Resources\Eyes\45.png" />
+    <Resource Include="Resources\Eyes\46.png" />
+    <Resource Include="Resources\Eyes\47.png" />
+    <Resource Include="Resources\Eyes\48.png" />
+    <Resource Include="Resources\Eyes\49.png" />
+    <Resource Include="Resources\Eyes\50.png" />
+    <Resource Include="Resources\Eyes\51.png" />
+    <Resource Include="Resources\Eyes\52.png" />
+    <Resource Include="Resources\Eyes\53.png" />
+    <Resource Include="Resources\Eyes\54.png" />
+    <Resource Include="Resources\Eyes\55.png" />
+    <Resource Include="Resources\Eyes\56.png" />
+    <Resource Include="Resources\Eyes\57.png" />
+    <Resource Include="Resources\Eyes\58.png" />
+    <Resource Include="Resources\effects\effet210.png" />
+    <Resource Include="Resources\effects\effet211.png" />
+    <Resource Include="Resources\effects\effet212.png" />
+    <Resource Include="Resources\effects\effet213.png" />
+    <Resource Include="Resources\Popart\01.png" />
+    <Resource Include="Resources\Popart\02.png" />
+    <Resource Include="Resources\Popart\03.png" />
+    <Resource Include="Resources\Popart\04.png" />
+    <Resource Include="Resources\Popart\05.png" />
+    <Resource Include="Resources\Popart\06.png" />
+    <Resource Include="Resources\Popart\07.png" />
+    <Resource Include="Resources\Popart\08.png" />
+    <Resource Include="Resources\Popart\09.png" />
+    <Resource Include="Resources\Popart\10.png" />
+    <Resource Include="Resources\Popart\11.png" />
+    <Resource Include="Resources\Popart\12.png" />
+    <Resource Include="Resources\Popart\13.png" />
+    <Resource Include="Resources\Popart\14.png" />
+    <Resource Include="Resources\Popart\15.png" />
+    <Resource Include="Resources\Popart\16.png" />
+    <Resource Include="Resources\Popart\17.png" />
+    <Resource Include="Resources\Popart\18.png" />
+    <Resource Include="Resources\Popart\19.png" />
+    <Resource Include="Resources\Popart\20.png" />
+    <Resource Include="Resources\Popart\21.png" />
+    <Resource Include="Resources\Popart\22.png" />
+    <Resource Include="Resources\Popart\23.png" />
+    <Resource Include="Resources\Popart\24.png" />
+    <Resource Include="Resources\Popart\25.png" />
+    <Resource Include="Resources\Popart\26.png" />
+    <Resource Include="Resources\Popart\27.png" />
+    <Resource Include="Resources\Popart\28.png" />
+    <Resource Include="Resources\Popart\29.png" />
+    <Resource Include="Resources\Popart\30.png" />
+    <Resource Include="Resources\Popart\31.png" />
+    <Resource Include="Resources\Popart\32.png" />
+    <Resource Include="Resources\Popart\33.png" />
+    <Resource Include="Resources\Popart\34.png" />
+    <Resource Include="Resources\Popart\35.png" />
+    <Resource Include="Resources\Popart\36.png" />
+    <Resource Include="Resources\Popart\37.png" />
+    <Resource Include="Resources\Popart\38.png" />
+    <Resource Include="Resources\Popart\39.png" />
+    <Resource Include="Resources\Popart\40.png" />
+    <Resource Include="Resources\Popart\41.png" />
+    <Resource Include="Resources\Popart\42.png" />
+    <Resource Include="Resources\Popart\43.png" />
+    <Resource Include="Resources\Popart\44.png" />
+    <Resource Include="Resources\Popart\45.png" />
+    <Resource Include="Resources\Popart\46.png" />
+    <Resource Include="Resources\Popart\47.png" />
+    <Resource Include="Resources\Popart\48.png" />
+    <Resource Include="Resources\Popart\49.png" />
+    <Resource Include="Resources\Popart\50.png" />
+    <Resource Include="Resources\Popart\51.png" />
+    <Resource Include="Resources\Popart\52.png" />
+    <Resource Include="Resources\Popart\53.png" />
+    <Resource Include="Resources\Popart\54.png" />
+    <Resource Include="Resources\Popart\55.png" />
+    <Resource Include="Resources\Popart\56.png" />
+    <Resource Include="Resources\Popart\57.png" />
+    <Resource Include="Resources\Popart\58.png" />
+    <Resource Include="Resources\Popart\59.png" />
+    <Resource Include="Resources\Popart\60.png" />
+    <Resource Include="Resources\Popart\61.png" />
+    <Resource Include="Resources\Popart\62.png" />
+    <Resource Include="Resources\Popart\63.png" />
+    <Resource Include="Resources\Popart\64.png" />
+    <Resource Include="Resources\Popart\65.png" />
+    <Resource Include="Resources\Popart\66.png" />
+    <Resource Include="Resources\Popart\67.png" />
+    <Resource Include="Images\WaitingImage.png" />
+    <Resource Include="Resources\effects\effet14.jpg" />
+    <Resource Include="Resources\effects\effet15.jpg" />
+    <Resource Include="Resources\effects\effet13.jpg" />
+    <Resource Include="Resources\effects\effet16.jpg" />
+    <Resource Include="Resources\effects\effet17.jpg" />
+    <Resource Include="Resources\effects\effet18.jpg" />
+    <Resource Include="Resources\effects\effet19.jpg" />
+    <Resource Include="Resources\effects\effet100.jpg" />
+    <Resource Include="Resources\effects\effet20.jpg" />
+    <Resource Include="Resources\effects\effet21.jpg" />
+    <Resource Include="Resources\effects\effet22.jpg" />
+    <Resource Include="Resources\effects\effet23.jpg" />
+    <Resource Include="Images\softwares.png" />
+    <Content Include="Images\softwares.svg" />
+    <Resource Include="Resources\effects\effet24.jpg" />
+    <Resource Include="Resources\effects\effet25.jpg" />
+    <Resource Include="Resources\effects\effet26.jpg" />
+    <Resource Include="Resources\effects\effet27.jpg" />
+    <Resource Include="Resources\effects\effet28.jpg" />
+    <Resource Include="Resources\effects\effet29.jpg" />
+    <Resource Include="Resources\effects\effet401.jpg" />
+    <Resource Include="Resources\effects\effet30.jpg" />
+    <Resource Include="Resources\effects\effet402.jpg" />
+    <Resource Include="Resources\effects\effet403.jpg" />
+    <Resource Include="Resources\effects\effet404.jpg" />
+    <Resource Include="Resources\effects\effet405.jpg" />
+    <Resource Include="Resources\effects\effet31.jpg" />
+    <Resource Include="Resources\effects\effet32.jpg" />
+    <Resource Include="Resources\effects\effet33.jpg" />
+    <Resource Include="Resources\effects\effet34.jpg" />
+    <Resource Include="Resources\effects\effet35.jpg" />
+    <Resource Include="Resources\effects\effet36.jpg" />
+    <Resource Include="Resources\effects\effet37.jpg" />
+    <Resource Include="Resources\effects\effet38.jpg" />
+    <Resource Include="Resources\effects\effet39.jpg" />
+    <Resource Include="Resources\effects\effet40.jpg" />
+    <Resource Include="Resources\effects\effet41.jpg" />
+    <Resource Include="Resources\effects\effet42.jpg" />
+    <Resource Include="Resources\effects\effet43.jpg" />
+    <Resource Include="Resources\effects\effet44.jpg" />
+    <Resource Include="Resources\effects\effet45.jpg" />
+    <Resource Include="Resources\effects\effet46.jpg" />
+    <Resource Include="Resources\effects\effet47.jpg" />
+    <Resource Include="Resources\effects\effet48.jpg" />
+    <Resource Include="Resources\effects\effet49.jpg" />
+    <Resource Include="Resources\effects\effet50.jpg" />
+    <Resource Include="Resources\effects\effet51.jpg" />
+    <Resource Include="Resources\effects\effet52.jpg" />
+    <Content Include="Resources\Sans Nom %281%29.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

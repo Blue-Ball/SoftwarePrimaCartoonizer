@@ -1,0 +1,271 @@
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\bin\Debug\Odyssey.dll
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Odyssey.dll
+C:\Users\Administrator\Documents\GitHub\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\bin\Debug\Odyssey.dll
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.Cache
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Odyssey.dll
+D:\wMoneyWiz\Silverwiz.MoneyWiz\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\bin\Debug\Odyssey.dll
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.Cache
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Odyssey.dll
+D:\Workspace\SVNROOT\FreeLancer4\bil80\Task750\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\bin\Debug\Odyssey.dll
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.Cache
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Odyssey.dll
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+C:\Software Cartoonizer Premium\Silverwiz.Expander\bin\Debug\Odyssey.dll
+C:\Software Cartoonizer Premium\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.Cache
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Odyssey.dll
+C:\Software Cartoonizer Premium\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+C:\Software iToon Premium\trial\Silverwiz.Expander\bin\Debug\Odyssey.dll
+C:\Software iToon Premium\trial\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csprojResolveAssemblyReference.cache
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.Cache
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Odyssey.dll
+C:\Software iToon Premium\trial\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+C:\Software iToon Premium\Silverwiz.Expander\bin\Debug\Odyssey.dll
+C:\Software iToon Premium\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.Cache
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Odyssey.dll
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+C:\Software iToon Premium\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csprojResolveAssemblyReference.cache
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\bin\Debug\Odyssey.dll
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csprojResolveAssemblyReference.cache
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.Cache
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Odyssey.dll
+C:\Software iToon Cartoonizer Express\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\bin\Debug\Odyssey.dll
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csprojAssemblyReference.cache
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.cache
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Odyssey.dll
+C:\Software Prima Cartoonizer- sans animation 271019\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\bin\Debug\Odyssey.dll
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csprojAssemblyReference.cache
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.cache
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.CoreCompileInputs.cache
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Odyssey.dll
+C:\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\bin\Debug\Odyssey.dll
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csprojAssemblyReference.cache
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.cache
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.CoreCompileInputs.cache
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Odyssey.dll
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\bin\Debug\Odyssey.dll
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csprojAssemblyReference.cache
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.cache
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.CoreCompileInputs.cache
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Odyssey.dll
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\bin\Debug\Odyssey.dll
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csprojAssemblyReference.cache
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.cache
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.CoreCompileInputs.cache
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Odyssey.dll
+C:\Software Prima Cartoonizer - Fiverr\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+C:\Software Prima Cartoonizer\Silverwiz.Expander\bin\Debug\Odyssey.dll
+C:\Software Prima Cartoonizer\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csprojAssemblyReference.cache
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.cache
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.CoreCompileInputs.cache
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Odyssey.dll
+C:\Software Prima Cartoonizer\Silverwiz.Expander\obj\Debug\Odyssey.pdb
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\bin\Debug\Odyssey.dll
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\bin\Debug\Odyssey.pdb
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.AssemblyReference.cache
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Generic.baml
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.cache
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Odyssey_MarkupCompile.lref
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Summary.baml
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExplorerBar.baml
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Button.baml
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.Expander.baml
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.ExpandHeader.baml
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Themes\Expander\Generic.baml
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Odyssey.g.resources
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Odyssey.Controls.Properties.Resources.resources
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.GenerateResource.cache
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Silverwiz.Expander.csproj.CoreCompileInputs.cache
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Odyssey.dll
+E:\Temp\SoftwarePrimaCartoonizer\Silverwiz.Expander\obj\Debug\Odyssey.pdb

@@ -1,0 +1,297 @@
+﻿<UserControl x:Class="PrimaCartoonizer.About"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="240"
+             d:DesignWidth="429"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="GlassButton" TargetType="{x:Type Button}">
+            <ControlTemplate.Resources>
+                <Storyboard x:Key="Timeline1">
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                   Storyboard.TargetName="glow"
+                                                   Storyboard.TargetProperty="(UIElement.Opacity)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1" />
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="Timeline2">
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                   Storyboard.TargetName="glow"
+                                                   Storyboard.TargetProperty="(UIElement.Opacity)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+            </ControlTemplate.Resources>
+            <Border BorderBrush="#ffffffff"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="4,4,4,4">
+                <Border x:Name="border"
+                        Background="#BD0F3E91"
+                        BorderBrush="#33333333"
+                        BorderThickness="1,1,1,1"
+                        CornerRadius="4,4,4,4">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.507*" />
+                            <RowDefinition Height="0.493*" />
+                        </Grid.RowDefinitions>
+                        <Border x:Name="glow"
+                                Grid.RowSpan="2"
+                                Width="Auto"
+                                HorizontalAlignment="Stretch"
+                                CornerRadius="4,4,4,4"
+                                Opacity="0">
+                            <Border.Background>
+                                <RadialGradientBrush>
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="1.702" ScaleY="2.243" />
+                                            <SkewTransform AngleX="0" AngleY="0" />
+                                            <RotateTransform Angle="0" />
+                                            <TranslateTransform X="-0.368" Y="-0.152" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#B28DBDFF" />
+                                    <GradientStop Offset="1" Color="#008DBDFF" />
+                                </RadialGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <ContentPresenter Grid.RowSpan="2"
+                                          Width="Auto"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
+                        <Border x:Name="shine"
+                                Width="Auto"
+                                Margin="0,0,0,0"
+                                HorizontalAlignment="Stretch"
+                                CornerRadius="4,4,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.494,0.028" EndPoint="0.494,0.889">
+                                    <GradientStop Offset="0" Color="#99FFFFFF" />
+                                    <GradientStop Offset="1" Color="#33FFFFFF" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="shine" Property="Opacity" Value="0.4" />
+                    <Setter TargetName="border" Property="Background" Value="#BD0F3E91" />
+                    <Setter TargetName="glow" Property="Visibility" Value="Hidden" />
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource Timeline1}" />
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard x:Name="Timeline2_BeginStoryboard" Storyboard="{StaticResource Timeline2}" />
+                    </Trigger.ExitActions>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+    </UserControl.Resources>
+    <Grid>
+        <Grid Grid.Row="1"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
+
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.RowSpan="2"
+                       Grid.Column="1"
+                       Margin="0,23,0,7"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontFamily="Calisto MT"
+                       FontSize="16"
+                       Foreground="Black"
+                       Text="Prima Cartoonizer">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="4"
+                                      Direction="330"
+                                      Opacity="0.5"
+                                      ShadowDepth="4"
+                                      Color="Black" />
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock Grid.Row="1"
+                       Grid.RowSpan="2"
+                       Grid.Column="1"
+                       Margin="0,13,0,7"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontFamily="Calisto MT"
+                       FontSize="16"
+                       Foreground="Black"
+                       >
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="4"
+                                      Direction="330"
+                                      Opacity="0.5"
+                                      ShadowDepth="4"
+                                      Color="Black" />
+                </TextBlock.Effect><Run Text="Version "/><Run Text="4"/></TextBlock>
+            <TextBlock Grid.Row="5"
+                       Grid.RowSpan="3"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="2"
+                       Height="34"
+                       Margin="0,14,0,12"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontFamily="Calisto MT"
+                       FontSize="16"
+                       Foreground="Black"
+                       Text="Copyright Primacartoonizer.com. All rights reserved.">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="4"
+                                      Direction="330"
+                                      Opacity="0.5"
+                                      ShadowDepth="4"
+                                      Color="Black" />
+                </TextBlock.Effect>
+            </TextBlock>
+
+
+
+            <Button Name="btnLink"
+                    Click="btnHome_Click"
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Margin="0,8,10,2"
+                    Content="https://www.primacartoonizer.com"
+                    Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <TextBlock FontFamily="Calisto MT"
+                                   FontSize="16"
+                                   Foreground="Black"
+                                   TextDecorations="Underline">
+                            <TextBlock.Effect>
+                                <DropShadowEffect BlurRadius="4"
+                                                  Direction="330"
+                                                  Opacity="0.5"
+                                                  ShadowDepth="4"
+                                                  Color="Black" />
+                            </TextBlock.Effect>
+                            <ContentPresenter />
+                        </TextBlock>
+                    </ControlTemplate>
+                </Button.Template>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Foreground" Value="White" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Foreground" Value="Blue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+
+            <Button Name="UpdateUrl"
+                    Click="btnUpdate_Click"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Margin="1,1,9,19"
+                    Content="Check update"
+                    Cursor="Hand" Grid.RowSpan="2" Visibility="Visible">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <TextBlock FontFamily="Calisto MT"
+                                   FontSize="16"
+                                   Foreground="Black"
+                                   TextDecorations="Underline">
+                            <TextBlock.Effect>
+                                <DropShadowEffect BlurRadius="4"
+                                                  Direction="330"
+                                                  Opacity="0.5"
+                                                  ShadowDepth="4"
+                                                  Color="Black" />
+                            </TextBlock.Effect>
+                            <ContentPresenter />
+                        </TextBlock>
+                    </ControlTemplate>
+                </Button.Template>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Foreground" Value="White" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Foreground" Value="Blue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+
+            <Button Grid.Row="9"
+                    Grid.Column="2"
+                    Margin="4"
+                    Click="Button_Click"
+                    Foreground="#FFFFFFFF"
+                    Template="{DynamicResource GlassButton}">
+                <StackPanel Width="80"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Image Width="20"
+                           Height="20"
+                           Margin="3,0"
+                           Stretch="Fill" />
+                    <TextBlock Margin="5,0,50,0"
+                               VerticalAlignment="Center"
+                               FontSize="14"
+                               Text="OK"
+                               TextWrapping="Wrap" />
+                </StackPanel>
+            </Button>
+            <TextBlock Grid.Row="4"
+                       Grid.Column="1"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontFamily="Calisto MT"
+                       FontSize="16"
+                       Foreground="Black"
+                       Text="Support: https://primacartoonizer.com/contact.php" Margin="0,8,0,14" Grid.RowSpan="2" Grid.ColumnSpan="2" Width="379">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="4"
+                                      Direction="330"
+                                      Opacity="0.5"
+                                      ShadowDepth="4"
+                                      Color="Black" />
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</UserControl>

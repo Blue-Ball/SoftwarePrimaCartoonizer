@@ -1,0 +1,430 @@
+﻿<UserControl x:Class="PrimaCartoonizer.RegisterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Loaded="Window_Loaded"
+             mc:Ignorable="d" Height="386.071" Width="552.912">
+    <UserControl.Resources>
+        <Style x:Key="TwitterTextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="AllowDrop" Value="true" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Trebuchet MS" />
+            <Setter Property="FontSize" Value="14" />
+            <!--  <Setter Property="UseLayoutRounding" Value="True"/>  -->
+            <Setter Property="Padding" Value="4" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="BorderBrush" Value="#FFAAAAAA" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <ControlTemplate.Resources>
+                            <Storyboard x:Key="FocusedOn">
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                               Storyboard.TargetName="FocusVisualElement"
+                                                               Storyboard.TargetProperty="(UIElement.Opacity)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Key="FocusedOff">
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                               Storyboard.TargetName="FocusVisualElement"
+                                                               Storyboard.TargetProperty="(UIElement.Opacity)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Key="DisabledOn">
+                                <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                               Storyboard.TargetName="DisabledVisualElement"
+                                                               Storyboard.TargetProperty="(UIElement.Visibility)">
+                                    <DiscreteObjectKeyFrame KeyTime="00:00:00.1000000" Value="{x:Static Visibility.Visible}" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Key="DisabledOff">
+                                <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                               Storyboard.TargetName="DisabledVisualElement"
+                                                               Storyboard.TargetProperty="(UIElement.Visibility)">
+                                    <DiscreteObjectKeyFrame KeyTime="00:00:00.1000000" Value="{x:Static Visibility.Collapsed}" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </ControlTemplate.Resources>
+                        <Grid>
+                            <Border x:Name="BorderBase"
+                                    Margin="3"
+                                    Background="Transparent"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="3" />
+                            <Border x:Name="FocusVisualElement"
+                                    Margin="0"
+                                    Background="Transparent"
+                                    BorderBrush="#52ECF5FD"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="7"
+                                    IsHitTestVisible="False"
+                                    Opacity="0">
+                                <Border x:Name="InnerFocusVisualElement"
+                                        Background="Transparent"
+                                        BorderBrush="#72E3F1FC"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="5"
+                                        IsHitTestVisible="False"
+                                        Opacity="1">
+                                    <Border x:Name="InnerFocusVisualElement2"
+                                            Background="Transparent"
+                                            BorderBrush="#92D9ECFA"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="3"
+                                            IsHitTestVisible="False"
+                                            Opacity="1">
+                                        <Border x:Name="InnerFocusVisualElement3"
+                                                Background="Transparent"
+                                                BorderBrush="#A27DBEF1"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="3"
+                                                IsHitTestVisible="False"
+                                                Opacity="1" />
+                                    </Border>
+                                </Border>
+                            </Border>
+                            <Label x:Name="TextPrompt"
+                                   Grid.Column="1"
+                                   Margin="3"
+                                   Content="{TemplateBinding Tag}"
+                                   Focusable="False"
+                                   Foreground="DimGray"
+                                   Visibility="Collapsed" />
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Margin="3"
+                                          Foreground="{TemplateBinding Foreground}" />
+                            <Border x:Name="DisabledVisualElement"
+                                    Margin="3"
+                                    Background="#A5FFFFFF"
+                                    BorderBrush="#59C0C0C0"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="3"
+                                    IsHitTestVisible="False"
+                                    Visibility="Collapsed" />
+                            <Border x:Name="ReadOnlyVisualElement"
+                                    Margin="3"
+                                    Background="#66FFFFFF"
+                                    CornerRadius="2.75"
+                                    Visibility="Collapsed" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsFocused" Value="False" />
+                                    <Condition Property="Text" Value="" />
+                                </MultiTrigger.Conditions>
+                                <MultiTrigger.Setters>
+                                    <Setter TargetName="TextPrompt" Property="Visibility" Value="Visible" />
+                                </MultiTrigger.Setters>
+                            </MultiTrigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard x:Name="FocusedOff_BeginStoryboard" Storyboard="{StaticResource FocusedOff}" />
+                                </Trigger.ExitActions>
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="FocusedOn_BeginStoryboard" Storyboard="{StaticResource FocusedOn}" />
+                                </Trigger.EnterActions>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="DisabledOn_BeginStoryboard" Storyboard="{StaticResource DisabledOn}" />
+                                </Trigger.EnterActions>
+
+                                <Setter Property="Foreground" Value="Silver" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard Storyboard="{StaticResource DisabledOff}" />
+                                </Trigger.EnterActions>
+
+                                <Setter Property="Foreground" Value="#FF000000" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <ControlTemplate x:Key="GlassButton" TargetType="{x:Type Button}">
+            <ControlTemplate.Resources>
+                <Storyboard x:Key="Timeline1">
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                   Storyboard.TargetName="glow"
+                                                   Storyboard.TargetProperty="(UIElement.Opacity)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1" />
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="Timeline2">
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                   Storyboard.TargetName="glow"
+                                                   Storyboard.TargetProperty="(UIElement.Opacity)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+            </ControlTemplate.Resources>
+            <Border BorderBrush="#ffffffff"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="4,4,4,4">
+                <Border x:Name="border"
+                        Background="#BD0F3E91"
+                        BorderBrush="#33333333"
+                        BorderThickness="1,1,1,1"
+                        CornerRadius="4,4,4,4">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.507*" />
+                            <RowDefinition Height="0.493*" />
+                        </Grid.RowDefinitions>
+                        <Border x:Name="glow"
+                                Grid.RowSpan="2"
+                                Width="Auto"
+                                HorizontalAlignment="Stretch"
+                                CornerRadius="4,4,4,4"
+                                Opacity="0">
+                            <Border.Background>
+                                <RadialGradientBrush>
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="1.702" ScaleY="2.243" />
+                                            <SkewTransform AngleX="0" AngleY="0" />
+                                            <RotateTransform Angle="0" />
+                                            <TranslateTransform X="-0.368" Y="-0.152" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#B28DBDFF" />
+                                    <GradientStop Offset="1" Color="#008DBDFF" />
+                                </RadialGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <ContentPresenter Grid.RowSpan="2"
+                                          Width="Auto"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
+                        <Border x:Name="shine"
+                                Width="Auto"
+                                Margin="0,0,0,0"
+                                HorizontalAlignment="Stretch"
+                                CornerRadius="4,4,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.494,0.028" EndPoint="0.494,0.889">
+                                    <GradientStop Offset="0" Color="#99FFFFFF" />
+                                    <GradientStop Offset="1" Color="#33FFFFFF" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="shine" Property="Opacity" Value="0.4" />
+                    <Setter TargetName="border" Property="Background" Value="#BD0F3E91" />
+                    <Setter TargetName="glow" Property="Visibility" Value="Hidden" />
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource Timeline1}" />
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard x:Name="Timeline2_BeginStoryboard" Storyboard="{StaticResource Timeline2}" />
+                    </Trigger.ExitActions>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+    </UserControl.Resources>
+    <Grid Margin="-8,0,22,-102">
+        <StackPanel Margin="20,20,20,-3">
+            <TextBlock Name="lblAppStatus"
+                       Grid.ColumnSpan="6"
+                       Margin="3"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontFamily="Calisto MT"
+                       FontSize="14"
+                       Foreground="Black"
+                       Text="Thank you for evaluating our software.">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="4"
+                                      Direction="330"
+                                      Opacity="0.5"
+                                      ShadowDepth="4"
+                                      Color="Black" />
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="4"
+                       Margin="3"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontFamily="Calisto MT"
+                       FontSize="14"
+                       Foreground="Black"
+                       Text="If you want to use the full version of the software, you can get it">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="4"
+                                      Direction="330"
+                                      Opacity="0.5"
+                                      ShadowDepth="4"
+                                      Color="Black" />
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock Grid.Row="2"
+                       Grid.RowSpan="2"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="4"
+                       Height="27"
+                       Margin="3"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontFamily="Calisto MT"
+                       FontSize="14"
+                       Foreground="Black"
+                       Text="directly with the Registration Key from the link below:">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="4"
+                                      Direction="330"
+                                      Opacity="0.5"
+                                      ShadowDepth="4"
+                                      Color="Black" />
+                </TextBlock.Effect>
+            </TextBlock>
+            <Button Name="btnLink"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="4"
+                    Margin="3"
+                    Click="Button_Click"
+                    Content="Click here to get your Product Key online &gt;&gt;&gt;"
+                    Cursor="Hand"
+                    Foreground="#FF0033DC">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <TextBlock FontFamily="Calisto MT"
+                                   FontSize="16"
+                                   TextDecorations="Underline">
+                            <TextBlock.Effect>
+                                <DropShadowEffect BlurRadius="4"
+                                                  Direction="330"
+                                                  Opacity="0.5"
+                                                  ShadowDepth="4"
+                                                  Color="Black" />
+                            </TextBlock.Effect>
+                            <ContentPresenter />
+                        </TextBlock>
+                    </ControlTemplate>
+                </Button.Template>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Foreground" Value="White" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Foreground" Value="Blue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <TextBlock Grid.Row="4"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="4"
+                       Width="366"
+                       Margin="3,10"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontFamily="Calisto MT"
+                       FontSize="16"
+                       Foreground="Black"
+                       Text="Registration Key:">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="4"
+                                      Direction="330"
+                                      Opacity="0.5"
+                                      ShadowDepth="4"
+                                      Color="Black" />
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <TextBox Name="textBox1"
+                     Height="35"
+                     Margin="10"
+                     FontSize="18" />
+            <TextBlock
+                Width="366"
+                Margin="3,10,0,10"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontFamily="Calisto MT"
+                FontSize="16"
+                Foreground="Black"
+                >
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="4"
+                        Direction="330"
+                        Opacity="0.5"
+                        ShadowDepth="4"
+                        Color="Black" />
+                </TextBlock.Effect><Run Text="Your Name"/><Run Text=":"/></TextBlock>
+            <TextBox x:Name="textBox1_Copy"
+                Height="35"
+                Margin="9,10,265,10"
+                FontSize="18" />
+            <StackPanel Height="48"
+                        Margin="20"
+                        VerticalAlignment="Bottom"
+                        FlowDirection="RightToLeft"
+                        Orientation="Horizontal">
+                <Button Grid.Row="7"
+                        Grid.Column="2"
+                        Grid.ColumnSpan="3"
+                        Width="170"
+                        Margin="27,4,7,4"
+                        Click="Button_Click_1"
+                        Foreground="#FFFFFFFF"
+                        Template="{DynamicResource GlassButton}">
+                    <StackPanel Width="160"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="5,0,50,0"
+                                   VerticalAlignment="Center"
+                                   FontSize="14"
+                                   Text="Register my version"
+                                   TextWrapping="Wrap" />
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="7"
+                        Grid.Column="4"
+                        Margin="4"
+                        Click="Button_Click_2"
+                        Foreground="#FFFFFFFF"
+                        Template="{DynamicResource GlassButton}">
+                    <StackPanel Width="70"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="5,0,50,0"
+                                   VerticalAlignment="Center"
+                                   FontSize="14"
+                                   Text="Free trial"
+                                   TextWrapping="Wrap" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

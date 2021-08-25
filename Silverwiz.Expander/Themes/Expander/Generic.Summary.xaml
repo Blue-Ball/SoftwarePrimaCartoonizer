@@ -1,0 +1,104 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Silverwiz.Expander">
+    <Duration x:Key="animTime">0:0:0.4</Duration>
+    <Style TargetType="{x:Type local:OdcSummary}">
+        <Setter Property="Background" Value="#40808080" />
+        <Setter Property="BorderBrush" Value="#60404040" />
+        <Setter Property="HeaderBackground" Value="#40A0A0A0" />
+        <Setter Property="MouseOverHeaderBackground" Value="#60FFFFFF" />
+        <Setter Property="MouseOverHeaderForeground" Value="#F0000000" />
+        <Setter Property="HeaderBorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="ShowEllipse" Value="True" />
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:OdcSummary}">
+                    <Border>
+                        <StackPanel>
+                            <local:OdcExpanderHeader x:Name="header"
+                                                     Height="0"
+                                                     Background="{TemplateBinding HeaderBackground}"
+                                                     BorderBrush="{TemplateBinding BorderBrush}"
+                                                     BorderThickness="{TemplateBinding HeaderBorderThickness}"
+                                                     CanExpand="True"
+                                                     Content="{TemplateBinding Header}"
+                                                     ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                                     CornerRadius="{TemplateBinding CornerRadius}"
+                                                     FocusImage="{TemplateBinding FocusImage}"
+                                                     Image="{TemplateBinding Image}"
+                                                     IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent},
+                                                                         Path=IsExpanded}"
+                                                     NotificationCount="{TemplateBinding NotificationCount}"
+                                                     ShowEllipse="{TemplateBinding ShowEllipse}"
+                                                     SnapsToDevicePixels="True" />
+                            <local:AnimationDecorator Grid.Row="1"
+                                                      Height="{TemplateBinding Height}"
+                                                      MinHeight="{TemplateBinding MinHeight}"
+                                                      MaxHeight="{TemplateBinding MaxHeight}"
+                                                      Duration="{StaticResource animTime}"
+                                                      IsExpanded="{Binding RelativeSource={RelativeSource TemplatedParent},
+                                                                           Path=IsExpanded}"
+                                                      OpacityAnimation="{TemplateBinding OpacityAnimation}"
+                                                      SnapsToDevicePixels="True">
+                                <Border x:Name="panel"
+                                        Grid.Row="1"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="0"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter VerticalAlignment="Bottom"
+                                                      Content="{TemplateBinding Content}"
+                                                      ContentTemplate="{TemplateBinding ContentTemplate}" />
+
+                                </Border>
+                            </local:AnimationDecorator>
+                        </StackPanel>
+                        <Border.LayoutTransform>
+                            <ScaleTransform x:Name="scaleT" ScaleY="1" />
+                        </Border.LayoutTransform>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger SourceName="header" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="header" Property="Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=MouseOverHeaderForeground}" />
+                            <Setter TargetName="header" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=MouseOverHeaderBackground}" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition SourceName="header" Property="IsPressed" Value="True" />
+                                <Condition Property="HasPressedBackground" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="header" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=PressedHeaderBackground}" />
+                        </MultiTrigger>
+                        <EventTrigger RoutedEvent="local:OdcSummary.MaximizedEvent">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard Storyboard.TargetProperty="ScaleY">
+                                        <DoubleAnimation DecelerationRatio="0.8"
+                                                         Duration="{StaticResource animTime}"
+                                                         Storyboard.TargetName="scaleT"
+                                                         To="1" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="local:OdcSummary.MinimizedEvent">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard Storyboard.TargetProperty="ScaleY">
+                                        <DoubleAnimation DecelerationRatio="0.8"
+                                                         Duration="{StaticResource animTime}"
+                                                         Storyboard.TargetName="scaleT"
+                                                         To="0" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

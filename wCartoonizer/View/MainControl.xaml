@@ -1,0 +1,1495 @@
+﻿<UserControl x:Class="PrimaCartoonizer.View.MainControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:lib="clr-namespace:Cartoonizer.ToolsLib;assembly=Cartoonizer.ToolsLib"
+             xmlns:libTools="clr-namespace:Cartoonizer.ToolsLib.Tools;assembly=Cartoonizer.ToolsLib"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:my="clr-namespace:Silverwiz.Expander;assembly=Odyssey"
+             xmlns:myd="clr-namespace:Cartoonizer.ToolsLib.Desginer;assembly=Cartoonizer.ToolsLib"
+             Background="Transparent"
+             ClipToBounds="True"
+             
+             d:DesignWidth="1088"
+             d:DesignHeight="600"
+             Loaded="UserControl_Loaded"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+
+        <!-- Bilal width et height scrollbar-->
+        <Style TargetType="ScrollBar">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Style.Triggers>
+                <Trigger Property="Orientation" Value="Vertical">
+                    <Setter Property="Width" Value="20"/>
+                    <Setter Property="Height" Value="Auto" />
+                    <Setter Property="Template" Value="{StaticResource VerticalScrollBar}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="PinStype" TargetType="ToggleButton">
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Grid x:Name="bGrid">
+                            <!--Bilal couleur des spins-->
+                            <Path x:Name="path"
+                                  Canvas.Left="9.74651"
+                                  Canvas.Top="14"
+                                  Width="16"
+                                  Height="12"
+                                  Data="F1 M 15.9971,22.7513L 19.9976,22.7512L 19.9976,14C 21.3311,14.3334 22.6647,14.6668 23.3314,15.5002C 23.9223,16.2388 23.9895,17.37 23.9972,18.5459L 31.9993,19.7508C 31.9993,18.7507 31.9993,18.0006 32.8327,17.3338C 33.6662,16.667 35.3331,16.3337 37,16.0003L 37,32.0025C 35.3331,31.6691 33.6662,31.3357 32.8327,30.669C 31.9993,30.0022 31.9993,29.2521 31.9993,28.2519L 23.9972,29.4569C 23.9895,30.6328 23.9223,31.764 23.3314,32.5026C 22.6647,33.336 21.3311,33.6694 19.9976,34.0028L 19.9976,25.2517L 15.9971,25.2517L 9.74651,24.0014L 15.9971,22.7513 Z "
+                                  Fill="#111111" 
+                                  Stretch="Fill" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="ToolTip" Value="Auto Hide" />
+                                <Setter TargetName="path" Property="Path.RenderTransform">
+                                    <Setter.Value>
+                                        <TransformGroup>
+                                            <ScaleTransform />
+                                            <SkewTransform />
+                                            <RotateTransform Angle="270" CenterX="8" CenterY="6" />
+                                            <TranslateTransform />
+                                        </TransformGroup>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="ToolTip" Value="Stop Auto Hide" />
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bGrid" Property="Background" Value="Silver" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="EffectsButtonSkin" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter Margin="5"
+                                              HorizontalAlignment="Stretch"
+                                              VerticalAlignment="Stretch" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Silver" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="Gray" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <ControlTemplate x:Key="GlassButtonTransparentToggle" TargetType="{x:Type ToggleButton}">
+            <ControlTemplate.Resources>
+                <Storyboard x:Key="Timeline1">
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                   Storyboard.TargetName="glow"
+                                                   Storyboard.TargetProperty="(UIElement.Opacity)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1" />
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="Timeline2">
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                   Storyboard.TargetName="glow"
+                                                   Storyboard.TargetProperty="(UIElement.Opacity)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+            </ControlTemplate.Resources>
+            <Border BorderBrush="#00000000"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="4,4,4,4">
+                <Border x:Name="border"
+                        Background="#00000000"
+                        BorderBrush="White"
+                        BorderThickness="1,1,1,1"
+                        CornerRadius="4,4,4,4">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.507*" />
+                            <RowDefinition Height="0.493*" />
+                        </Grid.RowDefinitions>
+                        <Border x:Name="glow"
+                                Grid.RowSpan="2"
+                                Width="Auto"
+                                HorizontalAlignment="Stretch"
+                                CornerRadius="4,4,4,4"
+                                Opacity="0">
+                            <Border.Background>
+                                <RadialGradientBrush>
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="1.702" ScaleY="2.243" />
+                                            <SkewTransform AngleX="0" AngleY="0" />
+                                            <RotateTransform Angle="0" />
+                                            <TranslateTransform X="-0.368" Y="-0.152" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="0" Color="#B28DBDFF" />
+                                    <GradientStop Offset="1" Color="#008DBDFF" />
+                                </RadialGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <ContentPresenter Grid.RowSpan="2"
+                                          Width="Auto"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
+                        <Border x:Name="shine"
+                                Width="Auto"
+                                Margin="0,0,0,0"
+                                HorizontalAlignment="Stretch"
+                                CornerRadius="4,4,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.494,0.028" EndPoint="0.494,0.889">
+                                    <GradientStop Offset="0" Color="#00000000" />
+                                    <GradientStop Offset="1" Color="#00000000" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="shine" Property="Opacity" Value="0.4" />
+                    <Setter TargetName="border" Property="Background" Value="#BD0F3E91" />
+                    <Setter TargetName="glow" Property="Visibility" Value="Hidden" />
+                </Trigger>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter TargetName="shine" Property="Opacity" Value="0.4" />
+                    <!--  <Setter Property="Background" TargetName="border" Value="#BD0F3E91"/>  -->
+                    <Setter TargetName="glow" Property="Visibility" Value="Hidden" />
+                    <Setter TargetName="border" Property="BorderBrush" Value="#BD0F3E91" />
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="border" Property="BorderBrush" Value="#BD0F3E91" />
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource Timeline1}" />
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard x:Name="Timeline2_BeginStoryboard" Storyboard="{StaticResource Timeline2}" />
+                    </Trigger.ExitActions>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+
+        <libTools:ToolTypeConverter x:Key="convToolType" />
+
+        <!--Bilal couleur background générale-->
+        <SolidColorBrush x:Key="PanelsBackgroundSolidColorBrush" Color="#ffffff" />
+        <SolidColorBrush x:Key="PanelsBorderSolidColorBrush" Color="Black" />
+        <Style x:Key="TopPanelButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="MinWidth" Value="90" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ContentPresenter x:Name="cp"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <ContentPresenter.Effect>
+                                <DropShadowEffect x:Name="effect"
+                                                  BlurRadius="15"
+                                                  ShadowDepth="2"
+                                                  Color="#ffffff" />
+                            </ContentPresenter.Effect>
+                        </ContentPresenter>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="cp" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="2"
+                                                          RenderingBias="Performance"
+                                                          ShadowDepth="2"
+                                                          Color="#ffffff" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="cp" Property="LayoutTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform CenterX="0"
+                                                        CenterY="0"
+                                                        ScaleX="1.2"
+                                                        ScaleY="1.2" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type myd:ToolboxItem}">
+            <Setter Property="Control.Padding" Value="5" />
+            <Setter Property="ContentControl.HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="ContentControl.VerticalContentAlignment" Value="Stretch" />
+            <Setter Property="ToolTip" Value="{Binding ToolTip}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type myd:ToolboxItem}">
+                        <Grid>
+                            <Rectangle Name="Border"
+                                       Fill="Transparent"
+                                       SnapsToDevicePixels="true"
+                                       StrokeDashArray="2"
+                                       StrokeThickness="1" />
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              Content="{TemplateBinding ContentControl.Content}"
+                                              SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="Border" Property="Stroke" Value="Gray" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type myd:Toolbox}">
+            <Setter Property="SnapsToDevicePixels" Value="true" />
+            <Setter Property="Focusable" Value="False" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border Background="{TemplateBinding Panel.Background}"
+                                BorderBrush="White"
+                                BorderThickness="0"
+                                Padding="{TemplateBinding Control.Padding}"
+                                SnapsToDevicePixels="True">
+                            <!--Bilal scrollbar-->
+                            <ScrollViewer Background="White"
+                                          BorderBrush="#FFD82CD0"
+                                          Foreground="#ffffff"
+                                          VerticalScrollBarVisibility="Visible" >
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Margin="0,5,0,5"
+                                   ItemHeight="{Binding Path=DefaultItemSize.Height,
+                                                        RelativeSource={RelativeSource AncestorType=myd:Toolbox}}"
+                                   ItemWidth="{Binding Path=DefaultItemSize.Width,
+                                                       RelativeSource={RelativeSource AncestorType=myd:Toolbox}}" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="/PrimaCartoonizer;component/Images/common_bg.jpg" />
+            </Grid.Background>
+            <Border Margin="50,20"
+                    MinWidth="200"
+                    MinHeight="200"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    BorderBrush="Black"
+                    BorderThickness="2">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.7" ShadowDepth="0" />
+                </Border.Effect>
+
+                <ScrollViewer Name="scroller"
+                              Width="Auto"
+                              Height="Auto"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              HorizontalScrollBarVisibility="Auto"
+                              RenderTransformOrigin="0.5,0.5"
+                              VerticalScrollBarVisibility="Auto">
+
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                        <Viewbox Name="viewBoxContainer">
+                            <Grid Name="gridContainer">
+                                <Image x:Name="drawingCanvasOrig" Grid.Row="0" Visibility="Hidden" Width="auto" Height="auto"
+                                       Grid.Column="0"/>
+
+                                <!--  SelectedToolChanged="drawingCanvas_SelectedToolChanged"  -->
+                                <lib:DrawingCanvas x:Name="drawingCanvas"
+                                                   Width="auto"
+                                                   Height="auto"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   AllowDrop="True"
+                                                   LineWidth="2"
+                                                   ObjectColor="Black"
+                                                   TextFontFamilyName="Gisha"
+                                                   Grid.Row="0"
+                                                   Grid.Column="0"
+                                                   TextFontSize="22">
+                                    <!--
+                                        <lib:DrawingCanvas.Background>
+                                        <ImageBrush AlignmentX="Right"
+                                        AlignmentY="Bottom"
+                                        ImageSource="/PrimaCartoonizer;component/Images/Koala.jpg"
+                                        Stretch="None" />
+                                        </lib:DrawingCanvas.Background>
+                                    -->
+                                </lib:DrawingCanvas>
+
+                            </Grid>
+                        </Viewbox>
+                    </StackPanel>
+
+                </ScrollViewer>
+                <!--
+                    <Image Grid.RowSpan="3"
+                    Source="/PrimaCartoonizer;component/Images/Koala.jpg"
+                    Stretch="Uniform" />
+                -->
+            </Border>
+
+            <Image x:Name="WaitingImage" Visibility="Hidden" Width="300" Height="257" VerticalAlignment="Center" HorizontalAlignment="Left" Source="/PrimaCartoonizer;component/Images/WaitingImage.png" Margin="563,134,0,242" />
+
+            <TextBlock FontSize="18" Margin="563,507,0,169" Name="NewProgressBar_Vide" Text="" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Visibility="Hidden" Width="300" Height="4" Foreground="White" Cursor="Wait" TextAlignment="Center">
+                <TextBlock.Background>
+                    <LinearGradientBrush  EndPoint="0,0.99" >
+                        <GradientStop Color="#333333" Offset="1" />
+                        <GradientStop Color="#1FFAB6" Offset="1" />
+                    </LinearGradientBrush>
+                </TextBlock.Background>
+            </TextBlock>
+
+            <TextBlock FontSize="18" Margin="563,507,0,169" Name="NewProgressBar_Plein" Text="" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Visibility="Hidden" Width="1" Height="3" Foreground="White" Cursor="Wait" TextAlignment="Center">
+                <TextBlock.Background>
+                    <LinearGradientBrush  EndPoint="0,0" >
+                        <GradientStop Color="#202020" Offset="1" />
+                        <GradientStop Color="#1FFAB6" Offset="1" />
+                    </LinearGradientBrush>
+                </TextBlock.Background>
+            </TextBlock>
+
+            <TextBlock FontSize="18" Margin="563,449,0,207" Name="progressbartext" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="300" Height="Auto" Foreground="White" DataContext="{Binding}" Cursor="Wait"
+               Visibility="Hidden" HorizontalAlignment="Left" TextAlignment="Center">
+                <!-- //Animation<TextBlock.Triggers>                
+                    <EventTrigger RoutedEvent="TextBlock.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard TargetName="progressbartext" 
+                                TargetProperty="Opacity"
+                                RepeatBehavior="Forever">
+                                <DoubleAnimationUsingPath Duration="0:0:4" 
+                                                  Source="Y">
+                                    <DoubleAnimationUsingPath.PathGeometry>
+                                        <PathGeometry>
+                                            <PathGeometry.Figures>
+                                                <PathFigure StartPoint="0 0">
+                                                    <LineSegment Point="0 1" />
+                                                    <LineSegment Point="2 1" />
+                                                    <LineSegment Point="2 0" />
+                                                </PathFigure>
+                                            </PathGeometry.Figures>
+                                        </PathGeometry>
+                                    </DoubleAnimationUsingPath.PathGeometry>
+                                </DoubleAnimationUsingPath>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+                -->
+                <TextBlock.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#202020" Offset="1" />
+                        <GradientStop Color="#000000" Offset="1" />
+                    </LinearGradientBrush>
+                </TextBlock.Background>
+            </TextBlock>
+
+            <TextBlock FontSize="18" Margin="504,369,501,100" Name="progressbartext_Update" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="419"  Height="Auto" Foreground="White" DataContext="{Binding}" Cursor="Wait"
+               Visibility="Hidden" HorizontalAlignment="Center" TextAlignment="Center">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="TextBlock.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard TargetName="progressbartext_Update" 
+                                TargetProperty="Opacity"
+                                RepeatBehavior="Forever">
+                                <DoubleAnimationUsingPath Duration="0:0:4" 
+                                                  Source="Y">
+                                    <DoubleAnimationUsingPath.PathGeometry>
+                                        <PathGeometry>
+                                            <PathGeometry.Figures>
+                                                <PathFigure StartPoint="0 0">
+                                                    <LineSegment Point="0 1" />
+                                                    <LineSegment Point="2 1" />
+                                                    <LineSegment Point="2 0" />
+                                                </PathFigure>
+                                            </PathGeometry.Figures>
+                                        </PathGeometry>
+                                    </DoubleAnimationUsingPath.PathGeometry>
+                                </DoubleAnimationUsingPath>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+                <TextBlock.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#202020" Offset="1" />
+                        <GradientStop Color="#1FFAB6" Offset="1" />
+                    </LinearGradientBrush>
+                </TextBlock.Background></TextBlock>
+
+            <StackPanel Margin="0,50,0,-26"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Stretch"
+                        Background="Transparent"
+                        MouseLeave="StackPanel_MouseLeave"
+                        Tag="{Binding ElementName=effectsPanelPin,
+                                      Mode=OneWay}">
+                <Grid>
+                    <!--Bilal menu -->
+                    <Border Margin="10,6,0,22" x:Name="Menu" Visibility="Hidden"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Background="#353535"
+                            BorderBrush="White"
+                            BorderThickness="2"
+                            CornerRadius="8"
+                            Opacity="0.95">
+
+                        <Grid Width="230" HorizontalAlignment="Stretch" Margin="0,23,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="21*"/>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="201*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5" />
+                                <RowDefinition Height="570" />
+                                <!--Bilal taille pour déterminer la distance entre les thumbnails-->
+                                <RowDefinition Height="70" />
+                            </Grid.RowDefinitions>
+                            <RadioButton Content="SD"  FontFamily="Calisto MT" FontSize="12" Foreground="Yellow" Name="radioButtonSD" VerticalAlignment="Top" Visibility="Visible" IsChecked="True" Margin="5,-14,-4,0" Height="22" Grid.ColumnSpan="3" Grid.RowSpan="2" />
+                            <RadioButton Content="HD"  FontFamily="Calisto MT" FontSize="12" Foreground="Yellow" Name="radioButtonHD" VerticalAlignment="Top" Visibility="Visible" Margin="22,-14,-50,0" Height="22" Grid.RowSpan="2" Grid.Column="2" />
+                            <RadioButton Content="Full HD (It needs some time)" Name="radioButtonFullHD" FontFamily="Calisto MT" FontSize="12" Foreground="Yellow" VerticalAlignment="Top" Visibility="Visible" Margin="5,3,20,0" Height="21" Grid.RowSpan="2" Grid.ColumnSpan="3"  />
+                            <my:ExplorerBar x:Name="explorerBar"
+                                            Grid.Row="1"
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch" BorderBrush="White" Margin="0,18,0,-108" Grid.RowSpan="2" Grid.ColumnSpan="3">
+                                <!--Bilal taille de la hauteur du menu-->
+                                <!-- bilal coleur fond scrollbar-->
+                                <my:OdcExpander Header="Cartoon Effects" IsExpanded="True" Cursor="Hand" Margin="0">
+                                    <myd:Toolbox x:Name="toolboxEffects"
+                                		Width="224"
+                                		HorizontalAlignment="Stretch"
+                                		VerticalAlignment="Stretch"
+                                		BorderBrush="#FF1069A0"
+                                		Cursor="Hand"
+                                		DefaultItemSize="200,200"
+                                		Foreground="Black"
+                                        Background="#5DAFA1"
+                                        Opacity="1"/>
+                                </my:OdcExpander>
+
+                                <my:OdcExpander Header="Splatter Effects" IsExpanded="False" Cursor="Hand" Margin="0">
+                                    <myd:Toolbox x:Name="toolboxSplatters"
+                                		Width="224"
+                                		HorizontalAlignment="Stretch"
+                                		VerticalAlignment="Stretch"
+                                		BorderBrush="#FF1069A0"
+                                		Cursor="Hand"
+                                		DefaultItemSize="200,200"
+                                		Foreground="Black"
+                                        Background="#5DAFA1"
+                                        Opacity="1"/>
+                                </my:OdcExpander>
+
+
+                                <my:OdcExpander Header="Textures" IsExpanded="False" Cursor="Hand">
+                                    <myd:Toolbox x:Name="toolboxTextures"
+                                                 Width="224"
+                                		HorizontalAlignment="Stretch"
+                                		VerticalAlignment="Stretch"
+                                		BorderBrush="#FF1069A0"
+                                		Cursor="Hand"
+                                		DefaultItemSize="200,200"
+                                		Foreground="Black"
+                                        Background="#5DAFA1"
+                                        Opacity="1"/>
+                                </my:OdcExpander>
+
+                                <my:OdcExpander Header="Frames" IsExpanded="False" Cursor="Hand">
+                                    <myd:Toolbox x:Name="toolboxFrames"
+                                                 Width="224"
+                                		HorizontalAlignment="Stretch"
+                                		VerticalAlignment="Stretch"
+                                		BorderBrush="#FF1069A0"
+                                		Cursor="Hand"
+                                		DefaultItemSize="200,200"
+                                		Foreground="Black"
+                                        Background="#5DAFA1"
+                                        Opacity="1"/>
+                                </my:OdcExpander>
+
+                                <my:OdcExpander Header="Eyes" IsExpanded="False" Cursor="Hand" Foreground="White">
+                                    <myd:Toolbox x:Name="toolboxObjects1"
+                                                 Width="224"
+                                		HorizontalAlignment="Stretch"
+                                		VerticalAlignment="Stretch"
+                                		BorderBrush="#FF1069A0"
+                                		Cursor="Hand"
+                                		DefaultItemSize="100,100"
+                                		Foreground="Black"
+                                        Background="#5DAFA1"
+                                        Opacity="1"/>
+                                </my:OdcExpander>
+
+                                <my:OdcExpander Header="Eyes Woman" IsExpanded="False" Cursor="Hand" Foreground="White">
+                                    <myd:Toolbox x:Name="toolboxObjects"
+                                                 Width="224"
+                                		HorizontalAlignment="Stretch"
+                                		VerticalAlignment="Stretch"
+                                		BorderBrush="#FF1069A0"
+                                		Cursor="Hand"
+                                		DefaultItemSize="100,100"
+                                		Foreground="Black"
+                                        Background="#5DAFA1"
+                                        Opacity="1"/>
+                                </my:OdcExpander>
+
+                                <my:OdcExpander Header="Eyes Man" IsExpanded="False" Cursor="Hand" Foreground="White">
+                                    <myd:Toolbox x:Name="toolboxObjects2"
+                                                 Width="224"
+                                		HorizontalAlignment="Stretch"
+                                		VerticalAlignment="Stretch"
+                                		BorderBrush="#FF1069A0"
+                                		Cursor="Hand"
+                                		DefaultItemSize="100,100"
+                                		Foreground="Black"
+                                        Background="#5DAFA1"
+                                        Opacity="1"/>
+                                </my:OdcExpander>
+
+                                <my:OdcExpander Header="Eyes Toon" IsExpanded="False" Cursor="Hand" Foreground="White">
+                                    <myd:Toolbox x:Name="toolboxObjects3"
+                                                 Width="224"
+                                		HorizontalAlignment="Stretch"
+                                		VerticalAlignment="Stretch"
+                                		BorderBrush="#FF1069A0"
+                                		Cursor="Hand"
+                                		DefaultItemSize="100,100"
+                                		Foreground="Black"
+                                        Background="#5DAFA1"
+                                        Opacity="1"/>
+                                </my:OdcExpander>
+
+                                <my:OdcExpander Header="Glasses" IsExpanded="False" Cursor="Hand" Foreground="White">
+                                    <myd:Toolbox x:Name="toolboxObjects4"
+                                                 Width="224"
+                                		HorizontalAlignment="Stretch"
+                                		VerticalAlignment="Stretch"
+                                		BorderBrush="#FF1069A0"
+                                		Cursor="Hand"
+                                		DefaultItemSize="100,100"
+                                		Foreground="Black"
+                                        Background="#5DAFA1"
+                                        Opacity="1"/>
+                                </my:OdcExpander>
+
+                                <my:OdcExpander Header="Comic / Pop Art" IsExpanded="False" Cursor="Hand" Foreground="White">
+                                    <myd:Toolbox x:Name="toolboxObjects5"
+                                                 Width="224"
+                                		HorizontalAlignment="Stretch"
+                                		VerticalAlignment="Stretch"
+                                		BorderBrush="#FF1069A0"
+                                		Cursor="Hand"
+                                		DefaultItemSize="100,100"
+                                		Foreground="Black"
+                                        Background="#5DAFA1"
+                                        Opacity="1"/>
+                                </my:OdcExpander>
+
+                                <!--
+                                <my:OdcExpander Header="2x Faster" IsExpanded="False" Cursor="Hand">
+                                    <myd:Toolbox x:Name="toolboxEffects2"
+                                                 Width="220"
+                                                 HorizontalAlignment="Stretch"
+                                                 VerticalAlignment="Stretch"
+                                                 BorderBrush="#FF1069A0"
+                                                 Cursor="Hand"
+                                                 DefaultItemSize="100,100"
+                                                 Foreground="Black" />
+                                </my:OdcExpander>
+                                -->
+                                <!--<my:OdcExpander Header="Color Effects" IsExpanded="False" Cursor="Hand">
+                                    <myd:Toolbox x:Name="toolboxColoreffects"
+                                                 Width="220"
+                                                 HorizontalAlignment="Stretch"
+                                                 VerticalAlignment="Stretch"
+                                                 BorderBrush="#FF1069A0"
+                                                 Cursor="Hand"
+                                                 DefaultItemSize="100,100"
+                                                 Foreground="Black" />
+                                </my:OdcExpander>-->
+                                <!--
+                                <my:OdcExpander Header="Instagram Effects" IsExpanded="False" Cursor="Hand">
+                                    <myd:Toolbox x:Name="toolboxInstagramEffects"
+                                                 Width="220"
+                                                 HorizontalAlignment="Stretch"
+                                                 VerticalAlignment="Stretch"
+                                                 BorderBrush="#FF1069A0"
+                                                 Cursor="Hand"
+                                                 DefaultItemSize="100,100"
+                                                 Foreground="Black" />
+                                </my:OdcExpander>
+                                -->
+
+
+
+
+
+                                <my:OdcExpander Header="Frames" IsExpanded="False" Cursor="Hand" Visibility="Collapsed">
+                                    <myd:Toolbox x:Name="toolboxVariousFrames"
+                                                 Width="224"
+                                		HorizontalAlignment="Stretch"
+                                		VerticalAlignment="Stretch"
+                                		BorderBrush="#FF1069A0"
+                                		Cursor="Hand"
+                                		DefaultItemSize="100,100"
+                                		Foreground="Black"
+                                        Background="#5DAFA1"
+                                        Opacity="1"/>
+                                </my:OdcExpander>
+                                <my:OdcExpander Header="Resize" IsExpanded="False" Cursor="Hand" Visibility="Collapsed">
+                                    <myd:Toolbox x:Name="toolboxResize"
+                                                 Width="224"
+                                		HorizontalAlignment="Stretch"
+                                		VerticalAlignment="Stretch"
+                                		BorderBrush="#FF1069A0"
+                                		Cursor="Hand"
+                                		DefaultItemSize="100,100"
+                                		Foreground="Black"
+                                        Background="#5DAFA1"
+                                        Opacity="1"/>
+                                </my:OdcExpander>
+                            </my:ExplorerBar>
+                            <!--
+                            <Button Name="ApplyEffectButton1" Margin="-2,6,0,0" Cursor="Hand" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click_3" Content="Apply" Width="234" Height="31" Foreground="Black" IsEnabled="True" IsCancel="False" IsDefault="False" 
+                                    BorderBrush="#FFEBC5FC" Visibility="Hidden" FontSize="16" Grid.Row="2">
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF232324" Offset="1" />
+                                        <GradientStop Color="#FFD8D1FF" Offset="0.935" />
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            -->
+                            <Button Name="ApplyEffectButton1" Margin="953,-20,-836,0" Cursor="Hand" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click_3"  Width="84" Height="31" Foreground="White" IsEnabled="True" IsCancel="False" IsDefault="False" 
+                                    Background="#FF232324" Visibility="Hidden" FontSize="14" Grid.Column="2" Grid.Row="1">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="24" Height="24" Source="/PrimaCartoonizer;component/Images/apply.png" />
+                                    <TextBlock Margin="2" VerticalAlignment="Center" FontSize="14" Text="Apply" />
+                                </StackPanel>
+                            </Button>
+
+
+                        </Grid>
+
+                    </Border>
+                    <ToggleButton Name="effectsPanelPin"
+                                  Margin="10"
+                                  HorizontalAlignment="Right"
+                                  VerticalAlignment="Top"
+                                  Style="{DynamicResource PinStype}"
+                                  Visibility="Hidden">
+                        <ToggleButton.Tag>
+                            <Thickness Bottom="2"
+                                       Left="-220"
+                                       Right="0"
+                                       Top="40" />
+                        </ToggleButton.Tag>
+                    </ToggleButton>
+                </Grid>
+                <StackPanel.Triggers>
+                    <EventTrigger RoutedEvent="StackPanel.MouseEnter">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard AccelerationRatio="1">
+                                    <ThicknessAnimation Duration="0:0:0.4"
+                                                        FillBehavior="HoldEnd"
+                                                        Storyboard.TargetProperty="Margin"
+                                                         />
+
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+
+                </StackPanel.Triggers>
+            </StackPanel>
+
+            <StackPanel Margin="0,278,0,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Background="Transparent"
+                        MouseLeave="StackPanel_MouseLeave"
+                        Tag="{Binding ElementName=colorPanelPin,
+                                      Mode=OneWay}">
+                <Grid Width="230"
+                      Height="178"
+                      Margin="0,0,10,0"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch">
+                    <Border HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Background="{StaticResource PanelsBackgroundSolidColorBrush}"
+                            BorderBrush="White"
+                            BorderThickness="2"
+                            CornerRadius="8" Margin="-3,0,0,-17">
+                        <StackPanel Margin="5,25,5,20"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="50" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0"
+                                           Grid.Column="2"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="Red" />
+                                <TextBlock Grid.Row="1"
+                                           Grid.Column="2"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="Green" />
+                                <TextBlock Grid.Row="2"
+                                           Grid.Column="2"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="Blue" />
+                                <TextBlock Grid.Row="0"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="Cyan" />
+                                <TextBlock Grid.Row="1"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="Magenta" />
+                                <TextBlock Grid.Row="2"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="Yellow" />
+                                <Slider x:Name="slider1"
+                                        Cursor="Hand"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Margin="14,2,46,2"
+                                        Maximum="100"
+                                        Minimum="-100"
+                                        SmallChange="1"
+                                        TickFrequency="1"
+                                        ValueChanged="Slider_ValueChanged" Grid.ColumnSpan="2" />
+                                <Slider x:Name="slider2"
+                                        Cursor="Hand"
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Margin="14,2,46,2"
+                                        Maximum="100"
+                                        Minimum="-100"
+                                        SmallChange="1"
+                                        TickFrequency="1"
+                                        ValueChanged="Slider_ValueChanged" Grid.ColumnSpan="2" />
+                                <Slider x:Name="slider3"
+                                        Cursor="Hand"
+                                        Grid.Row="2"
+                                        Grid.Column="1"
+                                        Margin="14,2,46,2"
+                                        Maximum="100"
+                                        Minimum="-100"
+                                        SmallChange="1"
+                                        TickFrequency="1"
+                                        ValueChanged="Slider_ValueChanged" Grid.ColumnSpan="2" />
+                            </Grid>
+
+                            <Line Margin="5"
+                                  Stroke="Black"
+                                  X2="180" />
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="12*" />
+                                    <ColumnDefinition Width="75*"/>
+                                    <ColumnDefinition Width="32*"/>
+                                    <ColumnDefinition Width="50" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0"
+                                           Grid.Column="4"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="" Margin="25,2" />
+                                <TextBlock Grid.Row="1"
+                                           Grid.Column="4"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="" Margin="25,2" />
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="Brightness" Grid.ColumnSpan="3" Margin="2,2,67,2" Width="68" />
+                                <TextBlock Grid.Row="1"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="Contrast" Margin="8,2,9,2" Grid.ColumnSpan="2" />
+                                <TextBlock Grid.Row="2"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="*Intensity" Margin="-2,2,4,2" Width="60" Foreground="BlueViolet" FontSize="13"  Grid.ColumnSpan="2" />
+                                <Slider x:Name="sliderB"
+                                        Cursor="Hand"
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        Margin="2,2,46,2"
+                                        Maximum="100"
+                                        Minimum="-100"
+                                        SmallChange="1"
+                                        TickFrequency="1"
+                                        ValueChanged="Slider_ValueChanged_1" Grid.ColumnSpan="3" />
+                                <Slider x:Name="sliderC"
+                                        Cursor="Hand"
+                                        Grid.Row="1"
+                                        Grid.Column="2"
+                                        Margin="2,2,46,2"
+                                        Maximum="100"
+                                        Minimum="-100"
+                                        SmallChange="1"
+                                        TickFrequency="1"
+                                        ValueChanged="Slider2_ValueChanged_1" Grid.ColumnSpan="3" />
+                                <Slider x:Name="sliderI"
+                                        Cursor="Hand"
+                                        Grid.Row="2"
+                                        Grid.Column="2"
+                                        Margin="1,3,47,1"
+                                        Maximum="255"
+                                        Minimum="0"
+                                        Value="255"
+                                        SmallChange="1"
+                                        TickFrequency="1"
+                                        ValueChanged="sliderI_ValueChanged" Grid.ColumnSpan="3" />
+
+                            </Grid>
+
+                        </StackPanel>
+                    </Border>
+                    <ToggleButton Name="colorPanelPin"
+                                  Cursor="Hand"
+                                  Margin="4,-8,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  Style="{DynamicResource PinStype}">
+                        <ToggleButton.Tag>
+                            <Thickness Bottom="0"
+                                       Left="400"
+                                       Right="-220"
+                                       Top="278" />
+                        </ToggleButton.Tag>
+                    </ToggleButton>
+
+                </Grid>
+                <StackPanel.Triggers>
+                    <EventTrigger RoutedEvent="StackPanel.MouseEnter">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ThicknessAnimation AccelerationRatio="1"
+                                                        Duration="0:0:0.4"
+                                                        FillBehavior="HoldEnd"
+                                                        Storyboard.TargetProperty="Margin"
+                                                         />
+
+                                </Storyboard>
+                            </BeginStoryboard>
+
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                    <!--
+                        <EventTrigger RoutedEvent="StackPanel.MouseLeave">
+                        <EventTrigger.Actions>
+                        <BeginStoryboard>
+                        <Storyboard>
+                        <ThicknessAnimation AccelerationRatio="1"
+                        BeginTime="0:0:0.6"
+                        Duration="0:0:0.4"
+                        FillBehavior="HoldEnd"
+                        Storyboard.TargetProperty="Margin"
+                        To="0,400,-220,0" />
+                        </Storyboard>
+                        </BeginStoryboard>
+                        </EventTrigger.Actions>
+                        </EventTrigger>
+                    -->
+                </StackPanel.Triggers>
+            </StackPanel>
+
+            <StackPanel Height="50"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top"
+                        Background="Transparent" Margin="0,-1,0,0">
+                <Grid Height="50"
+                      Margin="0,0,0,0"
+                      HorizontalAlignment="center"
+                      VerticalAlignment="center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="40*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="400" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="400" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border Height="10"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            Background="#333333"
+                            BorderBrush="Black"
+                            BorderThickness="0,0,0,1" />
+                    <Border Grid.Column="2"
+                            Height="10"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            Background="#333333"
+                            BorderBrush="Black"
+                            BorderThickness="0,0,0,1" />
+                    <Border Grid.Column="1"
+                            Height="10"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            Background="#333333"
+                            BorderBrush="Black"
+                            BorderThickness="0" />
+                    <Border Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,0,0,1"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Background="#333333"
+                            BorderBrush="Black"
+                            BorderThickness="1,0,1,1"
+                            CornerRadius="0,0,12,12" />
+                    <StackPanel Grid.RowSpan="2"
+                                Grid.Column="1"
+                                Margin="10,0"
+                                Orientation="Horizontal">
+                        <Button Margin="3"
+                                Click="Button_Click"
+                                Cursor="Hand"
+                                Style="{StaticResource TopPanelButtonStyle}">
+                            <StackPanel Orientation="Horizontal">
+                                <!--
+                                <Path Width="26.5833"
+                                      Height="19"
+                                      Data="F1 M 16.6668,20L 13,28.5336L 13,16L 23,16L 23,15C 23,13.8954 23.8954,13 25,13L 32,13C 33.1046,13 35,14.8954 35,16L 35,20L 16.6668,20 Z M 35,32L 28,32L 13,32L 17.5833,21L 39.5833,21L 35,32 Z "
+                                      Fill="Black"
+                                      Stretch="Fill" />
+                                -->
+                                <Image Width="24"
+                                       Height="24"
+                                       Source="/PrimaCartoonizer;component/Images/add.png" />
+
+
+                                <!--Bilal couleur des textes-->
+                                <TextBlock Margin="2"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           Foreground="#000000"
+                                           Text=" Add" />
+                            </StackPanel>
+
+                        </Button>
+                        <Button Margin="3"
+                                Click="Button_Click_2"
+                                Cursor="Hand"
+                                Style="{StaticResource TopPanelButtonStyle}" Visibility="Collapsed">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Width="24"
+                                       Height="24"
+                                       Source="/PrimaCartoonizer;component/Images/reload.png" />
+
+
+                                <TextBlock Margin="2"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           Foreground="#000000"
+                                           Text="Reload" />
+                            </StackPanel>
+
+                        </Button>
+                        <Button x:Name="btnSave"
+                                Cursor="Hand"
+                                Margin="3"
+                                Click="btnSave_Click"
+                                Style="{StaticResource TopPanelButtonStyle}">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Width="22"
+                                      Height="22"
+                                      Data="F1 M 13,13L 35,13L 35,35L 29,35L 29,28L 19,28L 19,35L 13,35L 13,13 Z M 21,35L 21,32L 25,32L 25,35L 21,35 Z M 17,15L 17,21L 31,21L 31,15L 17,15 Z "
+                                      Fill="Black"
+                                      Stretch="Fill" />
+                                <TextBlock Margin="2"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           Foreground="#000000"
+                                           Text=" Save" />
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="btnPrint"
+                                Cursor="Hand"
+                                Margin="3"
+                                Click="btnPrint_Click"
+                                Style="{StaticResource TopPanelButtonStyle}" Visibility="Collapsed">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Width="24"
+                                       Height="24"
+                                       Source="/PrimaCartoonizer;component/Images/print.png" />
+
+                                <TextBlock Margin="2"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           Foreground="#000000"
+                                           Text=" Print" />
+                            </StackPanel>
+                        </Button>
+
+                        <Button x:Name="btnSVG"
+                                Cursor="Hand"
+                                Margin="3"
+                                Click="btnSVG_Click"
+                                Style="{StaticResource TopPanelButtonStyle}" Visibility="Collapsed">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Width="22"
+                                      Height="22"
+                                      Data="F1 M 13,13L 35,13L 35,35L 29,35L 29,28L 19,28L 19,35L 13,35L 13,13 Z M 21,35L 21,32L 25,32L 25,35L 21,35 Z M 17,15L 17,21L 31,21L 31,15L 17,15 Z "
+                                      Fill="Black"
+                                      Stretch="Fill" />
+                                <TextBlock Margin="2"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           Foreground="#000000"
+                                           Text=" Save Vector SVG File" />
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="btnShare"
+                                Cursor="Hand"
+                                Margin="3"
+                                Click="btnShare_Click"
+                                Style="{StaticResource TopPanelButtonStyle}" Visibility="Collapsed">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Width="24"
+                                       Height="24"
+                                       Source="/PrimaCartoonizer;component/Images/fb.png" />
+                                <TextBlock Margin="2"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           Foreground="#000000"
+                                           Text="Share" />
+                            </StackPanel>
+                        </Button>
+
+                        <Button x:Name="btnSoftwares"
+                                Cursor="Hand"
+                                Margin="3"
+                                Click="btnSoftwares_Click"
+                                Style="{StaticResource TopPanelButtonStyle}" Visibility="Visible">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Width="24"
+                                       Height="24"
+                                       Source="/PrimaCartoonizer;component/Images/softwares.png" />
+                                <TextBlock Margin="2"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           Foreground="#000000"
+                                           Text=" Our Softwares" />
+                            </StackPanel>
+                        </Button>
+
+                        <Button x:Name="btnHelp"
+                                Cursor="Hand"
+                                Margin="3"
+                                Click="btnHelp_Click"
+                                Style="{StaticResource TopPanelButtonStyle}" Visibility="Visible">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="2"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           Foreground="#000000"
+                                           Text="Help"/>
+                                <Image Width="24"
+                                       Height="24"
+                                       Source="/PrimaCartoonizer;component/Images/questionmark.png" />
+                            </StackPanel>
+                        </Button>
+
+                        <Button Margin="3"
+                                Click="Button_Click_1"
+                                Cursor="Hand"
+                                Style="{StaticResource TopPanelButtonStyle}">
+                            <StackPanel Orientation="Horizontal">
+                                <Canvas Width="32" Height="32">
+                                    <Ellipse Canvas.Top="4"
+                                             Width="24"
+                                             Height="24"
+                                             Stroke="Black"
+                                             StrokeThickness="3" />
+                                    <TextBlock Canvas.Left="10"
+                                               Canvas.Top="4"
+                                               FontSize="18"
+                                               Text="i" />
+                                </Canvas>
+                                <TextBlock Margin="-4,0,0,0"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           Foreground="#000000"
+                                           Text="About" />
+                            </StackPanel>
+                        </Button>
+
+
+
+                    </StackPanel>
+                </Grid>
+                <StackPanel.Triggers>
+                    <EventTrigger RoutedEvent="StackPanel.MouseEnter">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ThicknessAnimation AccelerationRatio="1"
+                                                        Duration="0:0:0.4"
+                                                        FillBehavior="HoldEnd"
+                                                        Storyboard.TargetProperty="Margin"
+                                                         />
+
+                                </Storyboard>
+                            </BeginStoryboard>
+
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </StackPanel.Triggers>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1"
+                        Margin="0,100,0,2"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Background="Transparent"
+                        MouseLeave="StackPanel_MouseLeave"
+                        Tag="{Binding ElementName=toolsPanelPin,
+                                      Mode=OneWay}">
+
+                <Grid>
+                    <Border Margin="0,0,10,0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Background="{StaticResource PanelsBackgroundSolidColorBrush}"
+                            BorderBrush="White"
+                            BorderThickness="2"
+                            CornerRadius="8">
+
+
+                        <Grid Width="90">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="10" />
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="1">
+                                <ToggleButton Name="btnSelect"
+                                              Cursor="Hand"
+                                              Grid.Row="1"
+                                              Grid.Column="1"
+                                              Margin="4"
+                                              Click="btnColorBalance_Click"
+                                              IsChecked="{Binding ElementName=drawingCanvas,
+                                                                  Path=Tool,
+                                                                  Mode=OneWay,
+                                                                  Converter={StaticResource convToolType},
+                                                                  ConverterParameter=Pointer}"
+                                              Tag="Pointer"
+                                              Template="{DynamicResource GlassButtonTransparentToggle}">
+                                    <StackPanel Width="80"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Orientation="Vertical">
+                                        <Image Width="32"
+                                               Height="32"
+                                               Margin="3,0"
+                                               Source="/PrimaCartoonizer;component/Images/cursor.png"
+                                               Stretch="Fill" />
+                                        <TextBlock HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   FontSize="14"
+                                                   Text="Select"
+                                                   TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </ToggleButton>
+                                <ToggleButton Name="btnCrop"
+                                              Cursor="Hand"
+                                              Grid.Row="2"
+                                              Grid.Column="1"
+                                              Margin="4"
+                                              Click="btnColorBalance_Click"
+                                              IsChecked="{Binding ElementName=drawingCanvas,
+                                                                  Path=Tool,
+                                                                  Mode=OneWay,
+                                                                  Converter={StaticResource convToolType},
+                                                                  ConverterParameter=Pointer}"
+                                              Tag="Crop"
+                                              Template="{DynamicResource GlassButtonTransparentToggle}">
+                                    <StackPanel Width="80"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Orientation="Vertical">
+                                        <Image Width="32"
+                                               Height="32"
+                                               Margin="3,0"
+                                               Source="/PrimaCartoonizer;component/Images/crop.png"
+                                               Stretch="Fill" />
+                                        <TextBlock HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   FontSize="14"
+                                                   Text="Crop"
+                                                   TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </ToggleButton>
+                            </StackPanel>
+                        </Grid>
+
+                    </Border>
+                    <ToggleButton Name="toolsPanelPin"
+                                  Cursor="Hand"
+                                  Margin="4,-8,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  Style="{DynamicResource PinStype}">
+                        <ToggleButton.Tag>
+                            <Thickness Bottom="2"
+                                       Left="0"
+                                       Right="-80"
+                                       Top="100" />
+                        </ToggleButton.Tag>
+                    </ToggleButton>
+                </Grid>
+
+                <StackPanel.Triggers>
+                    <EventTrigger RoutedEvent="StackPanel.MouseEnter">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard AccelerationRatio="1">
+                                    <ThicknessAnimation Duration="0:0:0.4"
+                                                        FillBehavior="HoldEnd"
+                                                        Storyboard.TargetProperty="Margin"
+                                                         />
+
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </StackPanel.Triggers>
+            </StackPanel>
+
+
+            <StackPanel Margin="0,478,0,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Background="Transparent"
+                        MouseLeave="StackPanel_MouseLeave"
+                        Tag="{Binding ElementName=zoomPanelPin,
+                                      Mode=OneWay}">
+                <Grid Width="230"
+                      Height="78"
+                      Margin="0,0,10,0"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch">
+                    <Border HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Background="{StaticResource PanelsBackgroundSolidColorBrush}"
+                            BorderBrush="White"
+                            BorderThickness="2"
+                            CornerRadius="8" Margin="-5,0,0,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="10" />
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="1"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Orientation="Horizontal">
+                                <Button x:Name="btnZoomOut"
+                                        Width="32"
+                                        Height="32"
+                                        Margin="2"
+                                        Background="Transparent"
+                                        Click="btnZoomOut_Click">
+                                    <Image Source="/PrimaCartoonizer;component/Images/Zoom%20Out.png" />
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter />
+                                            </Border>
+
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter Property="Background" Value="#7D000000" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+
+                                    </Button.Template>
+                                </Button>
+                                <!--Bilal le maximum zoom à définir dans la valeur Maximum ci-dessous -->
+                                <Slider x:Name="sliderZoom"
+                                        Cursor="Hand"
+                                        Width="100"
+                                        Margin="2"
+                                        VerticalAlignment="Center"
+                                        IsSelectionRangeEnabled="False"
+                                        Maximum="200"
+                                        Minimum="10"
+                                        SmallChange="20"
+                                        TickFrequency="200"
+                                        ValueChanged="zoomControl_ValueChanged"
+                                        Value="100" />
+                                <TextBlock x:Name="zoomText"
+                                           MinWidth="34"
+                                           Margin="5"
+                                           VerticalAlignment="Center"
+                                           Text="100%" />
+
+                                <Button x:Name="btnZoomIn"
+                                        Width="32"
+                                        Height="32"
+                                        Margin="2"
+                                        Background="Transparent"
+                                        Click="btnZoomIn_Click">
+                                    <Image Source="/PrimaCartoonizer;component/Images/Zoom-In-icon.png" />
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter />
+                                            </Border>
+
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter Property="Background" Value="#7D000000" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+
+                                    </Button.Template>
+                                </Button>
+
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <ToggleButton Name="zoomPanelPin"
+                                  Cursor="Hand"
+                                  Margin="4,-8,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  Style="{DynamicResource PinStype}">
+                        <ToggleButton.Tag>
+                            <Thickness Bottom="0"
+                                       Left="0"
+                                       Right="-220"
+                                       Top="478" />
+                        </ToggleButton.Tag>
+                    </ToggleButton>
+                </Grid>
+                <StackPanel.Triggers>
+                    <EventTrigger RoutedEvent="StackPanel.MouseEnter">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ThicknessAnimation AccelerationRatio="1"
+                                                        Duration="0:0:0.4"
+                                                        FillBehavior="HoldEnd"
+                                                        Storyboard.TargetProperty="Margin"
+                                                         />
+
+                                </Storyboard>
+                            </BeginStoryboard>
+
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+
+                </StackPanel.Triggers>
+            </StackPanel>
+            <Button Name="ApplyEffectButton" Background="Snow" BorderBrush="#FFEBC5FC"  Cursor="Hand" Click="Button_Click_3" FontSize="16" Foreground="Black" Height="42" HorizontalAlignment="Left" IsCancel="False" IsDefault="False" IsEnabled="True" Margin="250,68,0,0" VerticalAlignment="Top" 
+                    Visibility="Hidden" Width="150">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="24" Height="24" Source="/PrimaCartoonizer;component/Images/apply.png" />
+                    <TextBlock Margin="2" VerticalAlignment="Center" FontSize="18" Text="Apply Effect" />
+                </StackPanel>
+            </Button>
+
+            <Button Name="Button_Undo" Background="Snow" BorderBrush="#FFEBC5FC"  Cursor="Hand" Click="Button_undo" FontSize="16" Foreground="Black" Height="42" HorizontalAlignment="Left" IsCancel="False" IsDefault="False" IsEnabled="True" Margin="405,68,0,0" VerticalAlignment="Top" Visibility="Hidden" Width="150">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="24" Height="24" Source="/PrimaCartoonizer;component/Images/undo.png" />
+                    <TextBlock Margin="2" VerticalAlignment="Center" FontSize="18" Text="Undo" />
+                </StackPanel>
+            </Button>
+
+            <Button Name="Button_Open_Image" Background="Snow" BorderBrush="#FFEBC5FC"  Cursor="Hand" Click="Button_Click_Open_Image" FontSize="12" Foreground="Black" Height="32" HorizontalAlignment="Left" IsCancel="False" IsDefault="False" IsEnabled="True" Margin="250,115,0,0" VerticalAlignment="Top" 
+                    Visibility="Hidden" Width="150">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="24" Height="24" Source="/PrimaCartoonizer;component/Images/Zoom-In-icon.png" />
+                    <TextBlock Margin="2" VerticalAlignment="Center" FontSize="18" Text="View Full Size" />
+                </StackPanel>
+            </Button>
+
+        </Grid>
+
+
+    </Grid>
+</UserControl>

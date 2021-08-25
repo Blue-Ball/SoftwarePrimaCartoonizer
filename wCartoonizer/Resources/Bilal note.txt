@@ -1,0 +1,2 @@
+Commande pour couper les images en deux avec imagemagick pour plusieurs images en un seul coup:
+ct1 EyesWomen/*.png -crop 50%x100% +repage EyesWomen/splitleftout%02d.png

@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PrimaCartoonizer.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HomeUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://Primacartoonizer.com/</Value>
+    </Setting>
+    <Setting Name="SupportUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://Primacartoonizer.com/contact.php</Value>
+    </Setting>
+    <Setting Name="HelpUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://Primacartoonizer.com/help.htm</Value>
+    </Setting>
+    <Setting Name="SoftwaresUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://Primacartoonizer.com/softwares.htm</Value>
+    </Setting>
+    <Setting Name="BuyNowUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://Primacartoonizer.com/buynow_prima.htm</Value>
+    </Setting>
+    <Setting Name="BtnLink" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://Primacartoonizer.com/</Value>
+    </Setting>
+    <Setting Name="UpdateUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://Primacartoonizer.com/update_prima_new.htm</Value>
+    </Setting>
+    <Setting Name="Auth" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.activation.primacartoonizer.com/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

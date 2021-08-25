@@ -1,0 +1,83 @@
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Math\bin\Debug\AForge.Math.dll
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Math\bin\Debug\AForge.Math.pdb
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Math\bin\Debug\AForge.Math.xml
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Math\bin\Debug\AForge.dll
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Math\bin\Debug\AForge.pdb
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Math\obj\Debug\Math.csprojResolveAssemblyReference.cache
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Math\obj\Debug\AForge.Math.dll
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Math\obj\Debug\AForge.Math.pdb
+C:\Software Cartoonizer Premium\Math\bin\Debug\AForge.Math.dll
+C:\Software Cartoonizer Premium\Math\bin\Debug\AForge.Math.pdb
+C:\Software Cartoonizer Premium\Math\bin\Debug\AForge.Math.xml
+C:\Software Cartoonizer Premium\Math\bin\Debug\AForge.dll
+C:\Software Cartoonizer Premium\Math\bin\Debug\AForge.pdb
+C:\Software Cartoonizer Premium\Math\obj\Debug\Math.csprojResolveAssemblyReference.cache
+C:\Software Cartoonizer Premium\Math\obj\Debug\AForge.Math.dll
+C:\Software Cartoonizer Premium\Math\obj\Debug\AForge.Math.pdb
+C:\Software iToon Premium\Math\bin\Debug\AForge.Math.dll
+C:\Software iToon Premium\Math\bin\Debug\AForge.Math.pdb
+C:\Software iToon Premium\Math\bin\Debug\AForge.Math.xml
+C:\Software iToon Premium\Math\bin\Debug\AForge.dll
+C:\Software iToon Premium\Math\bin\Debug\AForge.pdb
+C:\Software iToon Premium\Math\obj\Debug\Math.csprojResolveAssemblyReference.cache
+C:\Software iToon Premium\Math\obj\Debug\AForge.Math.dll
+C:\Software iToon Premium\Math\obj\Debug\AForge.Math.pdb
+C:\Software Prima Cartoonizer- sans animation 271019\Math\bin\Debug\AForge.Math.dll
+C:\Software Prima Cartoonizer- sans animation 271019\Math\bin\Debug\AForge.Math.pdb
+C:\Software Prima Cartoonizer- sans animation 271019\Math\bin\Debug\AForge.Math.xml
+C:\Software Prima Cartoonizer- sans animation 271019\Math\bin\Debug\AForge.dll
+C:\Software Prima Cartoonizer- sans animation 271019\Math\bin\Debug\AForge.pdb
+C:\Software Prima Cartoonizer- sans animation 271019\Math\obj\Debug\Math.csprojAssemblyReference.cache
+C:\Software Prima Cartoonizer- sans animation 271019\Math\obj\Debug\Math.csproj.CopyComplete
+C:\Software Prima Cartoonizer- sans animation 271019\Math\obj\Debug\AForge.Math.dll
+C:\Software Prima Cartoonizer- sans animation 271019\Math\obj\Debug\AForge.Math.pdb
+C:\Software Prima Cartoonizer - Copy\Math\bin\Debug\AForge.Math.dll
+C:\Software Prima Cartoonizer - Copy\Math\bin\Debug\AForge.Math.pdb
+C:\Software Prima Cartoonizer - Copy\Math\bin\Debug\AForge.Math.xml
+C:\Software Prima Cartoonizer - Copy\Math\bin\Debug\AForge.dll
+C:\Software Prima Cartoonizer - Copy\Math\bin\Debug\AForge.pdb
+C:\Software Prima Cartoonizer - Copy\Math\obj\Debug\Math.csprojAssemblyReference.cache
+C:\Software Prima Cartoonizer - Copy\Math\obj\Debug\Math.csproj.CoreCompileInputs.cache
+C:\Software Prima Cartoonizer - Copy\Math\obj\Debug\Math.csproj.CopyComplete
+C:\Software Prima Cartoonizer - Copy\Math\obj\Debug\AForge.Math.dll
+C:\Software Prima Cartoonizer - Copy\Math\obj\Debug\AForge.Math.pdb
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Math\bin\Debug\AForge.Math.dll
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Math\bin\Debug\AForge.Math.pdb
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Math\bin\Debug\AForge.Math.xml
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Math\bin\Debug\AForge.dll
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Math\bin\Debug\AForge.pdb
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Math\obj\Debug\Math.csprojAssemblyReference.cache
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Math\obj\Debug\Math.csproj.CoreCompileInputs.cache
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Math\obj\Debug\Math.csproj.CopyComplete
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Math\obj\Debug\AForge.Math.dll
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Math\obj\Debug\AForge.Math.pdb
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Math\bin\Debug\AForge.Math.dll
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Math\bin\Debug\AForge.Math.pdb
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Math\bin\Debug\AForge.Math.xml
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Math\bin\Debug\AForge.dll
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Math\bin\Debug\AForge.pdb
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Math\obj\Debug\Math.csprojAssemblyReference.cache
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Math\obj\Debug\Math.csproj.CoreCompileInputs.cache
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Math\obj\Debug\Math.csproj.CopyComplete
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Math\obj\Debug\AForge.Math.dll
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Math\obj\Debug\AForge.Math.pdb
+C:\Software Prima Cartoonizer\Math\bin\Debug\AForge.Math.dll
+C:\Software Prima Cartoonizer\Math\bin\Debug\AForge.Math.pdb
+C:\Software Prima Cartoonizer\Math\bin\Debug\AForge.Math.xml
+C:\Software Prima Cartoonizer\Math\bin\Debug\AForge.dll
+C:\Software Prima Cartoonizer\Math\bin\Debug\AForge.pdb
+C:\Software Prima Cartoonizer\Math\obj\Debug\Math.csprojAssemblyReference.cache
+C:\Software Prima Cartoonizer\Math\obj\Debug\Math.csproj.CoreCompileInputs.cache
+C:\Software Prima Cartoonizer\Math\obj\Debug\Math.csproj.CopyComplete
+C:\Software Prima Cartoonizer\Math\obj\Debug\AForge.Math.dll
+C:\Software Prima Cartoonizer\Math\obj\Debug\AForge.Math.pdb
+E:\Temp\SoftwarePrimaCartoonizer\Math\bin\Debug\AForge.Math.dll
+E:\Temp\SoftwarePrimaCartoonizer\Math\bin\Debug\AForge.Math.pdb
+E:\Temp\SoftwarePrimaCartoonizer\Math\bin\Debug\AForge.Math.xml
+E:\Temp\SoftwarePrimaCartoonizer\Math\bin\Debug\AForge.dll
+E:\Temp\SoftwarePrimaCartoonizer\Math\bin\Debug\AForge.pdb
+E:\Temp\SoftwarePrimaCartoonizer\Math\obj\Debug\Math.csproj.AssemblyReference.cache
+E:\Temp\SoftwarePrimaCartoonizer\Math\obj\Debug\Math.csproj.CoreCompileInputs.cache
+E:\Temp\SoftwarePrimaCartoonizer\Math\obj\Debug\Math.csproj.CopyComplete
+E:\Temp\SoftwarePrimaCartoonizer\Math\obj\Debug\AForge.Math.dll
+E:\Temp\SoftwarePrimaCartoonizer\Math\obj\Debug\AForge.Math.pdb

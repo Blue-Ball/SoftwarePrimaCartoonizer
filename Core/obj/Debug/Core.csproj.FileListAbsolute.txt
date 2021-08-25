@@ -1,0 +1,57 @@
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Core\bin\Debug\AForge.dll
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Core\bin\Debug\AForge.pdb
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Core\bin\Debug\AForge.Core.xml
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Core\obj\Debug\AForge.dll
+C:\Othman\PumaNetRepo\trunk\wCartoonizer\Core\obj\Debug\AForge.pdb
+C:\Software Cartoonizer Premium\Core\bin\Debug\AForge.dll
+C:\Software Cartoonizer Premium\Core\bin\Debug\AForge.pdb
+C:\Software Cartoonizer Premium\Core\bin\Debug\AForge.Core.xml
+C:\Software Cartoonizer Premium\Core\obj\Debug\AForge.dll
+C:\Software Cartoonizer Premium\Core\obj\Debug\AForge.pdb
+C:\Software iToon Premium\Core\bin\Debug\AForge.dll
+C:\Software iToon Premium\Core\bin\Debug\AForge.pdb
+C:\Software iToon Premium\Core\bin\Debug\AForge.Core.xml
+C:\Software iToon Premium\Core\obj\Debug\AForge.dll
+C:\Software iToon Premium\Core\obj\Debug\AForge.pdb
+C:\Software iToon Premium\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Software Prima Cartoonizer- sans animation 271019\Core\bin\Debug\AForge.dll
+C:\Software Prima Cartoonizer- sans animation 271019\Core\bin\Debug\AForge.pdb
+C:\Software Prima Cartoonizer- sans animation 271019\Core\bin\Debug\AForge.Core.xml
+C:\Software Prima Cartoonizer- sans animation 271019\Core\obj\Debug\Core.csprojAssemblyReference.cache
+C:\Software Prima Cartoonizer- sans animation 271019\Core\obj\Debug\AForge.dll
+C:\Software Prima Cartoonizer- sans animation 271019\Core\obj\Debug\AForge.pdb
+C:\Software Prima Cartoonizer - Copy\Core\bin\Debug\AForge.dll
+C:\Software Prima Cartoonizer - Copy\Core\bin\Debug\AForge.pdb
+C:\Software Prima Cartoonizer - Copy\Core\bin\Debug\AForge.Core.xml
+C:\Software Prima Cartoonizer - Copy\Core\obj\Debug\Core.csprojAssemblyReference.cache
+C:\Software Prima Cartoonizer - Copy\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+C:\Software Prima Cartoonizer - Copy\Core\obj\Debug\AForge.dll
+C:\Software Prima Cartoonizer - Copy\Core\obj\Debug\AForge.pdb
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Core\bin\Debug\AForge.dll
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Core\bin\Debug\AForge.pdb
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Core\bin\Debug\AForge.Core.xml
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Core\obj\Debug\Core.csprojAssemblyReference.cache
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Core\obj\Debug\AForge.dll
+C:\Users\gmaxg\Desktop\Software Prima Cartoonizer - Copy\Core\obj\Debug\AForge.pdb
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Core\bin\Debug\AForge.dll
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Core\bin\Debug\AForge.pdb
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Core\bin\Debug\AForge.Core.xml
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Core\obj\Debug\Core.csprojAssemblyReference.cache
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Core\obj\Debug\AForge.dll
+C:\Software Prima Cartoonizer - Copy-New Fiverr\Core\obj\Debug\AForge.pdb
+C:\Software Prima Cartoonizer\Core\bin\Debug\AForge.dll
+C:\Software Prima Cartoonizer\Core\bin\Debug\AForge.pdb
+C:\Software Prima Cartoonizer\Core\bin\Debug\AForge.Core.xml
+C:\Software Prima Cartoonizer\Core\obj\Debug\Core.csprojAssemblyReference.cache
+C:\Software Prima Cartoonizer\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+C:\Software Prima Cartoonizer\Core\obj\Debug\AForge.dll
+C:\Software Prima Cartoonizer\Core\obj\Debug\AForge.pdb
+E:\Temp\SoftwarePrimaCartoonizer\Core\bin\Debug\AForge.dll
+E:\Temp\SoftwarePrimaCartoonizer\Core\bin\Debug\AForge.pdb
+E:\Temp\SoftwarePrimaCartoonizer\Core\bin\Debug\AForge.Core.xml
+E:\Temp\SoftwarePrimaCartoonizer\Core\obj\Debug\Core.csproj.AssemblyReference.cache
+E:\Temp\SoftwarePrimaCartoonizer\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+E:\Temp\SoftwarePrimaCartoonizer\Core\obj\Debug\AForge.dll
+E:\Temp\SoftwarePrimaCartoonizer\Core\obj\Debug\AForge.pdb
