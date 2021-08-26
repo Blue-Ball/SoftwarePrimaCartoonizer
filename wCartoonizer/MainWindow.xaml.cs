@@ -215,6 +215,12 @@ namespace PrimaCartoonizer
             ShowPopup(a);
         }
 
-        
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            mainControl.Width = this.Width - 36;
+            mainControl.scroller.HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden;
+            // mainControl.Height = this.Height - 60 - 24;
+            // mainControl.scroller.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
+        }
     }
 }

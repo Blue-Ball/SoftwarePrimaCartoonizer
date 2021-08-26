@@ -13,7 +13,7 @@
              d:DesignWidth="1088"
              d:DesignHeight="600"
              Loaded="UserControl_Loaded"
-             mc:Ignorable="d">
+             mc:Ignorable="d" SizeChanged="UserControl_SizeChanged">
     <UserControl.Resources>
 
         <!-- Bilal width et height scrollbar-->
@@ -25,6 +25,11 @@
                     <Setter Property="Width" Value="20"/>
                     <Setter Property="Height" Value="Auto" />
                     <Setter Property="Template" Value="{StaticResource VerticalScrollBar}" />
+                </Trigger>
+                <Trigger Property="Orientation" Value="Horizontal">
+                    <Setter Property="Width" Value="Auto"/>
+                    <Setter Property="Height" Value="20" />
+                    <Setter Property="Template" Value="{StaticResource HorizontalScrollBar}" />
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -196,8 +201,8 @@
         <libTools:ToolTypeConverter x:Key="convToolType" />
 
         <!--Bilal couleur background générale-->
-        <SolidColorBrush x:Key="PanelsBackgroundSolidColorBrush" Color="#ffffff" />
-        <SolidColorBrush x:Key="PanelsBorderSolidColorBrush" Color="Black" />
+        <SolidColorBrush x:Key="PanelsBackgroundSolidColorBrush" Color="Gray" />
+        <SolidColorBrush x:Key="PanelsBorderSolidColorBrush" Color="DarkGray" />
         <Style x:Key="TopPanelButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="MinWidth" Value="90" />
             <Setter Property="Template">
@@ -284,7 +289,7 @@
                             <ScrollViewer Background="White"
                                           BorderBrush="#FFD82CD0"
                                           Foreground="#ffffff"
-                                          VerticalScrollBarVisibility="Visible" >
+                                          VerticalScrollBarVisibility="Auto" >
                                 <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
                             </ScrollViewer>
                         </Border>
@@ -329,17 +334,16 @@
                               Height="Auto"
                               HorizontalAlignment="Stretch"
                               VerticalAlignment="Stretch"
-                              HorizontalScrollBarVisibility="Auto"
                               RenderTransformOrigin="0.5,0.5"
-                              VerticalScrollBarVisibility="Auto">
+                              ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                              ScrollViewer.VerticalScrollBarVisibility="Auto">
 
-                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Name="stackeDrawingpanel">
 
                         <Viewbox Name="viewBoxContainer">
                             <Grid Name="gridContainer">
                                 <Image x:Name="drawingCanvasOrig" Grid.Row="0" Visibility="Hidden" Width="auto" Height="auto"
                                        Grid.Column="0"/>
-
                                 <!--  SelectedToolChanged="drawingCanvas_SelectedToolChanged"  -->
                                 <lib:DrawingCanvas x:Name="drawingCanvas"
                                                    Width="auto"
@@ -762,14 +766,14 @@
                         Tag="{Binding ElementName=colorPanelPin,
                                       Mode=OneWay}">
                 <Grid Width="230"
-                      Height="178"
+                      Height="155"
                       Margin="0,0,10,0"
                       HorizontalAlignment="Stretch"
                       VerticalAlignment="Stretch">
                     <Border HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
                             Background="{StaticResource PanelsBackgroundSolidColorBrush}"
-                            BorderBrush="White"
+                            BorderBrush="{StaticResource PanelsBorderSolidColorBrush}"
                             BorderThickness="2"
                             CornerRadius="8" Margin="-3,0,0,-17">
                         <StackPanel Margin="5,25,5,20"
@@ -878,10 +882,10 @@
                                            HorizontalAlignment="Center"
                                            VerticalAlignment="Center"
                                            Text="Contrast" Margin="8,2,9,2" Grid.ColumnSpan="2" />
-                                <TextBlock Grid.Row="2"
+                                <!--<TextBlock Grid.Row="2"
                                            HorizontalAlignment="Center"
                                            VerticalAlignment="Center"
-                                           Text="*Intensity" Margin="-2,2,4,2" Width="60" Foreground="BlueViolet" FontSize="13"  Grid.ColumnSpan="2" />
+                                           Text="*Intensity" Margin="-2,2,4,2" Width="60" Foreground="BlueViolet" FontSize="13"  Grid.ColumnSpan="2" />-->
                                 <Slider x:Name="sliderB"
                                         Cursor="Hand"
                                         Grid.Row="0"
@@ -902,7 +906,7 @@
                                         SmallChange="1"
                                         TickFrequency="1"
                                         ValueChanged="Slider2_ValueChanged_1" Grid.ColumnSpan="3" />
-                                <Slider x:Name="sliderI"
+                                <!--<Slider x:Name="sliderI"
                                         Cursor="Hand"
                                         Grid.Row="2"
                                         Grid.Column="2"
@@ -912,7 +916,7 @@
                                         Value="255"
                                         SmallChange="1"
                                         TickFrequency="1"
-                                        ValueChanged="sliderI_ValueChanged" Grid.ColumnSpan="3" />
+                                        ValueChanged="sliderI_ValueChanged" Grid.ColumnSpan="3" />-->
 
                             </Grid>
 
@@ -1229,7 +1233,7 @@
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
                             Background="{StaticResource PanelsBackgroundSolidColorBrush}"
-                            BorderBrush="White"
+                            BorderBrush="{StaticResource PanelsBorderSolidColorBrush}"
                             BorderThickness="2"
                             CornerRadius="8">
 
@@ -1335,8 +1339,89 @@
                 </StackPanel.Triggers>
             </StackPanel>
 
+            <StackPanel Margin="0,465,0,0"
+			    HorizontalAlignment="Right"
+			    VerticalAlignment="Top"
+			    Background="Transparent"
+			    MouseLeave="StackPanel_MouseLeave"
+			    Tag="{Binding ElementName=intensityPanelPin,
+						Mode=OneWay}">
+                <Grid Width="230"
+		          Height="78"
+		          Margin="0,0,10,0"
+		          HorizontalAlignment="Stretch"
+		          VerticalAlignment="Stretch">
+                    <Border HorizontalAlignment="Stretch"
+				        VerticalAlignment="Stretch"
+				        Background="{StaticResource PanelsBackgroundSolidColorBrush}"
+				        BorderBrush="{StaticResource PanelsBorderSolidColorBrush}"
+				        BorderThickness="2"
+				        CornerRadius="8" Margin="-5,0,0,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="10" />
+                            </Grid.RowDefinitions>
 
-            <StackPanel Margin="0,478,0,0"
+                            <StackPanel Grid.Row="1"
+							    HorizontalAlignment="Center"
+							    VerticalAlignment="Center"
+							    Orientation="Horizontal">
+                                <TextBlock 
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="*Intensity" Margin="40,2,4,2" Width="60" Foreground="BlueViolet" FontSize="13"  Grid.ColumnSpan="2" />
+                                <Slider x:Name="sliderI"
+                                        Cursor="Hand"
+                                        Margin="1,3,47,1"
+                                        Maximum="255"
+                                        Minimum="0"
+                                        Value="255"
+                                        Width="140"
+                                        VerticalAlignment="Center"
+                                        IsSelectionRangeEnabled="False"
+                                        SmallChange="1"
+                                        TickFrequency="1"
+                                        ValueChanged="sliderI_ValueChanged" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <ToggleButton Name="intensityPanelPin"
+					  Cursor="Hand"
+					  Margin="4,-8,0,0"
+					  HorizontalAlignment="Left"
+					  VerticalAlignment="Top"
+					  Style="{DynamicResource PinStype}">
+                        <ToggleButton.Tag>
+                            <Thickness Bottom="0"
+						   Left="0"
+						   Right="-220"
+						   Top="465" />
+                        </ToggleButton.Tag>
+                    </ToggleButton>
+                </Grid>
+                <StackPanel.Triggers>
+                    <EventTrigger RoutedEvent="StackPanel.MouseEnter">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ThicknessAnimation AccelerationRatio="1"
+											Duration="0:0:0.4"
+											FillBehavior="HoldEnd"
+											Storyboard.TargetProperty="Margin"
+											 />
+
+                                </Storyboard>
+                            </BeginStoryboard>
+
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+
+                </StackPanel.Triggers>
+            </StackPanel>
+
+            <StackPanel Margin="0,556,0,0"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Top"
                         Background="Transparent"
@@ -1351,7 +1436,7 @@
                     <Border HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
                             Background="{StaticResource PanelsBackgroundSolidColorBrush}"
-                            BorderBrush="White"
+                            BorderBrush="{StaticResource PanelsBorderSolidColorBrush}"
                             BorderThickness="2"
                             CornerRadius="8" Margin="-5,0,0,0">
                         <Grid>
@@ -1442,7 +1527,7 @@
                             <Thickness Bottom="0"
                                        Left="0"
                                        Right="-220"
-                                       Top="478" />
+                                       Top="556" />
                         </ToggleButton.Tag>
                     </ToggleButton>
                 </Grid>
@@ -1465,6 +1550,7 @@
 
                 </StackPanel.Triggers>
             </StackPanel>
+            
             <Button Name="ApplyEffectButton" Background="Snow" BorderBrush="#FFEBC5FC"  Cursor="Hand" Click="Button_Click_3" FontSize="16" Foreground="Black" Height="42" HorizontalAlignment="Left" IsCancel="False" IsDefault="False" IsEnabled="True" Margin="250,68,0,0" VerticalAlignment="Top" 
                     Visibility="Hidden" Width="150">
                 <StackPanel Orientation="Horizontal">

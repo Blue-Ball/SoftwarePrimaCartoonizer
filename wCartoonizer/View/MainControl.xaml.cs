@@ -84,10 +84,12 @@ namespace PrimaCartoonizer.View
             drawingCanvas.ActualScale = Math.Round(e.NewValue / 2) / 100.0;
             drawingCanvasOrig.Width = drawingCanvas.Width * drawingCanvas.ActualScale;
             drawingCanvasOrig.Height = drawingCanvas.Height * drawingCanvas.ActualScale;
+            scroller.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
+            scroller.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
+
             // drawingCanvasOrig.ActualScale = Math.Round(e.NewValue / 2) / 100.0;
             if (zoomText != null)
                 zoomText.Text = string.Format("{0}%", Math.Round((e.NewValue / 2), 0));
-
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -2333,7 +2335,24 @@ namespace PrimaCartoonizer.View
         }
 
         #endregion
-               
+
+        private void UserControl_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if(this.ActualWidth - 280 - 280>0)
+            {
+                scroller.MaxWidth = this.ActualWidth - 280 - 280;
+            }
+                
+            scroller.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
+
+            if (Menu.ActualHeight > 0)
+            {
+                scroller.MaxHeight = Menu.ActualHeight + 60;
+            }
+            Debug.AutoFlush = true;
+            Debug.WriteLine(drawingCanvas.ActualWidth);
+            Trace.WriteLine(drawingCanvas.ActualWidth);
+        }
     }
 }
 

@@ -14,7 +14,7 @@
         MinWidth="900"
         MinHeight="500"
         Width="auto"
-        Height="auto">
+        Height="auto" SizeChanged="Window_SizeChanged">
     <Window.Resources>
         <Style TargetType="ScrollBar">
             <Setter Property="Background" Value="#000000"/>
